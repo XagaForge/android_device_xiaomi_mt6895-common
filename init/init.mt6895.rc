@@ -14,6 +14,9 @@ import /vendor/etc/init/hw/init.fingerprint.rc
 import /vendor/etc/init/hw/init.modem.rc
 # *** DO NOT import the new rc file after this line ***
 
+on early-init
+    write /sys/module/drm/parameters/vblankoffdelay -1
+
 on init
 # change lk_env permission
     chown root system /proc/lk_env
