@@ -95,6 +95,9 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.ir-service.example
 
+# Dexpreopt
+WITH_DEXPREOPT_DEBUG_INFO := false
+
 # Display
 PRODUCT_PACKAGES += \
     android.hardware.graphics.composer@2.3-service \
