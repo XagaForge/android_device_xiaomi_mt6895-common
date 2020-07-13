@@ -140,7 +140,6 @@ TARGET_COPY_OUT_VENDOR_DLKM := vendor_dlkm
 # Platform
 TARGET_BOARD_PLATFORM := mt6895
 BOARD_HAS_MTK_HARDWARE := true
-BOARD_VENDOR := xiaomi
 BOARD_TEE_VARIANT ?= beanpod
 
 # Power
