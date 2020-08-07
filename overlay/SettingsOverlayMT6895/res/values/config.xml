@@ -32,4 +32,7 @@
 
     <!-- Whether to show min refresh rate in display settings -->
     <bool name="config_show_min_refresh_rate_switch">true</bool>
+
+    <!-- Custom pickup sensor for doze customization -->
+    <string name="pickup_sensor" translatable="false">xiaomi.sensor.pickup</string>
 </resources>
