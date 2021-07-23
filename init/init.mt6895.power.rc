@@ -46,6 +46,7 @@ on post-fs-data
     write /sys/block/sdc/queue/nr_requests 256
     write /dev/sys/fs/by-name/userdata/cp_interval 6000
     write /dev/sys/fs/by-name/userdata/gc_urgent_sleep_time 200
+    write /dev/sys/fs/by-name/userdata/iostat_enable 0
 
 on boot
     # boot perf. tune
