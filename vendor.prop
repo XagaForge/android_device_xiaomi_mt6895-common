@@ -235,7 +235,6 @@ debug.sf.high_fps.earlyGl.sf.duration=13800000
 debug.sf.high_fps.earlyGl.app.duration=10000000
 debug.sf.high_fps.hwc.min.duration=8500000
 debug.sf.enable_gl_backpressure=0
-debug.sf.latch_unsignaled=true
 debug.sf.auto_latch_unsignaled=false
 debug.sf.disable_client_composition_cache=1
 debug.sf.enable_hwc_vds=0
