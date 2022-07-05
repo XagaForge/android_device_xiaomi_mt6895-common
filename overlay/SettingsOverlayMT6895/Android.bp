@@ -6,7 +6,6 @@
 
 runtime_resource_overlay {
     name: "SettingsOverlayMT6895",
-    sdk_version: "current",
     resource_dirs: ["res"],
     vendor: true,
 }
