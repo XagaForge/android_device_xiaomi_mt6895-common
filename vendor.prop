@@ -211,6 +211,7 @@ ro.surface_flinger.has_wide_color_display=true
 ro.surface_flinger.use_content_detection_for_refresh_rate?=true
 ro.surface_flinger.enable_frame_rate_override=false
 debug.sf.frame_rate_multiple_threshold=60
+debug.sf.auto_latch_unsignaled=0
 debug.sf.use_phase_offsets_as_durations=1
 debug.sf.late.sf.duration=13800000
 debug.sf.late.app.duration=10000000
