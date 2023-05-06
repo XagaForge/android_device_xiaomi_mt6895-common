@@ -224,6 +224,7 @@ debug.sf.earlyGl.app.duration=13800000
 debug.sf.hwc.min.duration=8500000
 debug.sf.enable_gl_backpressure=0
 debug.sf.enable_hwc_vds=0
+debug.sf.enable_egl_image_tracker=0
 debug.sf.predict_hwc_composition_strategy=0
 debug.sf.treat_170m_as_sRGB=1
 
