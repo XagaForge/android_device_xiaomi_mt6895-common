@@ -436,7 +436,6 @@ vendor/bin/ccci_rpcd
 vendor/etc/init/init.cccimdinit.rc
 vendor/etc/init/init.cccirpcd.rc
 vendor/etc/init/mtkrild.rc
-vendor/etc/init/muxreport.rc
 vendor/etc/ecc_list.xml
 vendor/etc/ecc_list_OP01.xml
 vendor/etc/ecc_list_OP02.xml
