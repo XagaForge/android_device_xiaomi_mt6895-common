@@ -1,6 +1,7 @@
 # Unpinned blobs from plato-user 15 SP1A.210812.016 OS2.0.209.0.VLQMIXM release-keys
 # duchamp: duchamp_global-user 15 UP1A.230905.011 OS2.0.100.0.VNLMIXM release-keys
 # rothko: rothko_global_user 16 BP2A.250605.015 OS2.0.215.0.WNNMIXM release-keys
+# plato V14.0.7.0.ULQMIXM: plato-user 14 SP1A.210812.016 V14.0.7.0.ULQMIXM release-keys
 
 # AEE
 vendor/lib64/libaedv.so
@@ -571,6 +572,23 @@ vendor/lib64/libviamipc-ril.so
 vendor/lib64/libwpfa.so
 vendor/lib64/vendor.mediatek.hardware.mtkradioex@2.0.so
 vendor/lib64/vendor.mediatek.hardware.mtkradioex@3.0.so
+
+# Radio (Engineer Mode) - from plato V14.0.7.0.ULQMIXM
+system_ext/app/EngineerMode/EngineerMode.apk|e34588606d108ea5aa154f55460fd46c8bbd677c
+system_ext/lib64/libaudiotoolkit.so|07acc8088fbb727f29c88c8cb23ec3902e1f1eb1
+system_ext/lib64/libem_aoltest_jni.so|66b7aaf4eac090a780400dcc35e8b1acb5d10ebe
+system_ext/lib64/libem_audio_jni.so|f8b031d3662f288772075faf32ae020ab7390b27
+system_ext/lib64/libem_bleoffload_jni.so|06f572dfe125f765b1bed18baf4de2c5b9d11a26
+system_ext/lib64/libem_support_jni.so|b7d3b3bfa079b6bca9acb0a7c054a7a234d92818
+system_ext/lib64/libem_wifi_jni.so|c0d02ba0d755ff8c33dcbfe79c4107dcf91df398
+vendor/bin/em_hidl|973b6f8728f4f6f74250fe83fbfde4f7bffc216f
+vendor/etc/init/em_hidl_user.rc|bdb5893df3e78d2d2adaf72bc7e56dfeee0be308
+vendor/lib64/libbluetooth_relayer.so|1614bf298f6c000baf84df5f6f1b53a6c8465a57
+vendor/lib64/libbluetoothem_mtk.so|37265565d04c0b52d126c803e09e2d7b67ca34bf
+vendor/lib64/vendor.mediatek.hardware.engineermode@1.0.so|238723b79a4e42e0d566a5cf1100e5e09dd20da9
+vendor/lib64/vendor.mediatek.hardware.engineermode@1.1.so|6c3c4bf708a55dedaa7227f32411cf790967a3ca
+vendor/lib64/vendor.mediatek.hardware.engineermode@1.2.so|989aafe0e845a46c9efe9fd8260a829d476ea37d
+vendor/lib64/vendor.mediatek.hardware.engineermode@1.3.so|cdf35668f34df78a4e83a04c5d3575c476d4ab5d
 
 # Secure Element
 vendor/bin/hw/android.hardware.secure_element@1.2-service-mediatek
