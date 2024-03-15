@@ -12,6 +12,8 @@ on charger
     write /sys/class/devfreq/mtk-dvfsrc-devfreq/userspace/set_freq 0
 
 on init
+    write /sys/devices/platform/soc/112b0000.ufshci/clkgate_enable 0
+
     # Set teo as cpu idle governor
     write /sys/devices/system/cpu/cpuidle/current_governor teo
 
@@ -60,6 +62,7 @@ on property:sys.boot_completed=1
     write /sys/block/sdb/queue/nr_requests 64
     write /sys/block/sdc/queue/nr_requests 64
 
+    write /sys/devices/platform/soc/112b0000.ufshci/clkgate_enable 1
     write /proc/sys/kernel/sched_migration_cost_ns 200000
 
     # restore boot perf. tune
