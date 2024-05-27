@@ -14,6 +14,9 @@ genfscon sysfs /devices/platform/fingerprint/irq                                
 genfscon sysfs /devices/virtual/mi_display/disp_feature/disp-DSI-0/disp_param           u:object_r:vendor_fingerprint_sysfs:s0
 genfscon sysfs /devices/virtual/touch/touch_dev/fod_press_status                        u:object_r:vendor_fingerprint_sysfs:s0
 
+# Torch
+genfscon sysfs /devices/virtual/flashlight_core/flashlight/torchbrightness              u:object_r:vendor_torch_sysfs:s0
+
 # Power
 genfscon sysfs /devices/platform/11282000.i2c/i2c-12/12-0064/power_supply               u:object_r:sysfs_power_supply:s0
 genfscon sysfs /devices/platform/11282000.i2c/i2c-12/12-0065/power_supply               u:object_r:sysfs_power_supply:s0
