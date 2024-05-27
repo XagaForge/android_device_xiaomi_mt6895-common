@@ -1,0 +1,3 @@
+type vendor_torch_sysfs, sysfs_type, fs_type;
+
+allow cameraserver vendor_torch_sysfs:file rw_file_perms;

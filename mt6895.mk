@@ -84,6 +84,8 @@ PRODUCT_PACKAGES += \
     android.hardware.bluetooth-service.mediatek
 
 # Camera
+$(call soong_config_set,libcameraservice,ext_lib,//$(LOCAL_PATH):libcameraservice_extension.xiaomi_mt6895)
+
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/permissions/camerax-vendor-extensions.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/camerax-vendor-extensions.xml
 
