@@ -53,9 +53,6 @@ on late-fs
     mount_all --late
 
 on post-fs
-    # Support legacy paths
-    symlink /sdcard /storage/sdcard0
-
     #change permissions for mediaserver
     chown root media /proc/clkmgr/mipi_test
 
