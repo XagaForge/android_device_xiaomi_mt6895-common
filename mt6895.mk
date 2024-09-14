@@ -183,7 +183,6 @@ PRODUCT_COPY_FILES += \
 
 # Overlays
 PRODUCT_PACKAGES += \
-    CarrierConfigOverlayMT6895 \
     FrameworksResOverlayMT6895 \
     PowerOffAlarmOverlayMT6895 \
     TelephonyOverlayMT6895 \
