@@ -284,16 +284,6 @@
       "HoldFd": true
     },
     {
-      "Name": "CDCpuset",
-      "Path": "/dev/cpuset/camera-daemon/cpus",
-      "Values": [
-        "0-5",
-        "6-7",
-        "0-7"
-      ],
-      "ResetOnInit": true
-    },
-    {
       "Name": "UclampTAMin",
       "Path": "/dev/cpuctl/top-app/cpu.uclamp.min",
       "Values": [
