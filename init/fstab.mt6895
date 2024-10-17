@@ -68,4 +68,4 @@ odm_dlkm                                            /odm_dlkm              ext4 
 /dev/block/by-name/otp                              /otp                   emmc   defaults                                                                                                                                                                                       defaults
 
 # zram
-/dev/block/zram0             none         swap    defaults     zramsize=50%,max_comp_streams=8
+/dev/block/zram0             none         swap    defaults     zramsize=4294967296,max_comp_streams=8
