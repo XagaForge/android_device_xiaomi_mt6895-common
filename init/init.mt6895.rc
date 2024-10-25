@@ -94,8 +94,6 @@ on post-fs
 on post-fs-data
     wait_for_prop vendor.all.modules.ready 1
 
-    swapon_all /vendor/etc/fstab.enableswap
-
     chown system system /mnt/vendor/nvcfg
     chmod 0771 /mnt/vendor/nvcfg
     restorecon_recursive /mnt/vendor/nvcfg
