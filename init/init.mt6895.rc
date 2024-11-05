@@ -270,17 +270,6 @@ on post-fs-data
     chmod 660 /dev/alarm
     chown root system /dev/alarm
 
-    # M4U
-    #insmod /vendor/lib/modules/m4u.ko
-    #mknod /dev/M4U_device c 188 0
-    chmod 0444 /dev/m4u
-    #chown system media /dev/M4U_device
-    chmod 0640 /proc/m4u
-    chown system media /proc/m4u
-
-    #set mlock limit to infinate (for m4u operation)
-    setrlimit 8 -1 -1
-
     # CMDQ
     chmod 0640 /dev/mtk_mdp
     chown system system /dev/mtk_mdp
