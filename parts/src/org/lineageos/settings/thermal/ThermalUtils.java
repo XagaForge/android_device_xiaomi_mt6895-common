@@ -35,7 +35,7 @@ public final class ThermalUtils {
     protected static final int STATE_GAMING = 5;
     protected static final int STATE_STREAMING = 6;
     protected static final int STATE_NAVIGATION = 7;
-    protected static final int STATE_VIDEO = 8;
+    protected static final int STATE_GAME = 8;
     private static final String THERMAL_CONTROL = "thermal_control";
 
     private static final String THERMAL_STATE_DEFAULT = "0";
@@ -43,10 +43,10 @@ public final class ThermalUtils {
     private static final String THERMAL_STATE_BROWSER = "11";
     private static final String THERMAL_STATE_CAMERA = "12";
     private static final String THERMAL_STATE_DIALER = "8";
-    private static final String THERMAL_STATE_GAMING = "9";
+    private static final String THERMAL_STATE_GAMING = "13";
     private static final String THERMAL_STATE_NAVIGATION = "19";
     private static final String THERMAL_STATE_STREAMING = "14";
-    private static final String THERMAL_STATE_VIDEO = "21";
+    private static final String THERMAL_STATE_GAME = "16";
 
     private static final String THERMAL_BENCHMARK = "thermal.benchmark=";
     private static final String THERMAL_BROWSER = "thermal.browser=";
@@ -55,7 +55,7 @@ public final class ThermalUtils {
     private static final String THERMAL_GAMING = "thermal.gaming=";
     private static final String THERMAL_NAVIGATION = "thermal.navigation=";
     private static final String THERMAL_STREAMING = "thermal.streaming=";
-    private static final String THERMAL_VIDEO = "thermal.video=";
+    private static final String THERMAL_GAME = "thermal.game=";
 
     private static final String THERMAL_SCONFIG = "/sys/devices/virtual/thermal/thermal_message/sconfig";
 
@@ -86,7 +86,7 @@ public final class ThermalUtils {
 
         if (value == null || value.isEmpty()) {
             value = THERMAL_BENCHMARK + ":" + THERMAL_BROWSER + ":" + THERMAL_CAMERA + ":" + THERMAL_DIALER + ":" +
-                    THERMAL_GAMING + ":" + THERMAL_NAVIGATION + ":" + THERMAL_STREAMING + ":" + THERMAL_VIDEO;
+                    THERMAL_GAMING + ":" + THERMAL_NAVIGATION + ":" + THERMAL_STREAMING + ":" + THERMAL_GAME;
             writeValue(value);
         }
         return value;
@@ -120,7 +120,7 @@ public final class ThermalUtils {
             case STATE_STREAMING:
                 modes[6] = modes[6] + packageName + ",";
                 break;
-            case STATE_VIDEO:
+            case STATE_GAME:
                 modes[7] = modes[7] + packageName + ",";
                 break;
         }
@@ -150,7 +150,7 @@ public final class ThermalUtils {
         } else if (modes[6].contains(packageName + ",")) {
             state = STATE_STREAMING;
         } else if (modes[7].contains(packageName + ",")) {
-            state = STATE_VIDEO;
+            state = STATE_GAME;
         }
 
         return state;
@@ -183,7 +183,7 @@ public final class ThermalUtils {
             } else if (modes[6].contains(packageName + ",")) {
                 state = THERMAL_STATE_STREAMING;
             } else if (modes[7].contains(packageName + ",")) {
-                state = THERMAL_STATE_VIDEO;
+                state = THERMAL_STATE_GAME;
             }
         }
         FileUtils.writeLine(THERMAL_SCONFIG, state);
