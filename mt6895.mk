@@ -181,6 +181,7 @@ PRODUCT_PACKAGES += \
     TelephonyOverlayMT6895 \
     TetheringResOverlayMT6895 \
     SettingsOverlayMT6895 \
+    SettingsProviderResOverlayMT6895 \
     SystemUIOverlayMT6895 \
     WifiResOverlayMT6895
 
