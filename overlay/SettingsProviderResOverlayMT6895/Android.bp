@@ -1,0 +1,5 @@
+runtime_resource_overlay {
+    name: "SettingsProviderResOverlayMT6895",
+    resource_dirs: ["res"],
+    vendor: true,
+}
