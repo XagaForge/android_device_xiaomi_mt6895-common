@@ -1,2 +1,5 @@
 # FUSE passthrough
 persist.sys.fuse.passthrough.enable=true
+
+# Radio
+persist.sys.radio.force_lte_ca=true
