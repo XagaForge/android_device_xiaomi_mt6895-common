@@ -3,3 +3,6 @@ persist.sys.fuse.passthrough.enable=true
 
 # HWUI
 debug.hwui.skia_atrace_enabled=false
+
+# Radio
+persist.sys.radio.force_lte_ca=true
