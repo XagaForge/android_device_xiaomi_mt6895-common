@@ -4,8 +4,6 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
-COMMON_PATH := device/xiaomi/mt6895-common
-
 # A/B
 AB_OTA_UPDATER := true
 
