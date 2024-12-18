@@ -1,4 +1,4 @@
-# Unpinned blobs from plato-user 14 UP1A.230905.011 V816.0.12.0.ULQMIXM release-keys
+# Unpinned blobs from plato-user 14 UP1A.230905.011 V816.0.14.0.ULQMIXM release-keys
 
 # AEE
 vendor/lib64/libaedv.so
