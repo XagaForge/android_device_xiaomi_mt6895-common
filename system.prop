@@ -1,3 +1,6 @@
+# Disable vsync for cpu rendered apps
+debug.cpurend.vsync=false
+
 # FUSE passthrough
 persist.sys.fuse.passthrough.enable=true
 
