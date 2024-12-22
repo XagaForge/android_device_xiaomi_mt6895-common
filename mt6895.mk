@@ -197,6 +197,7 @@ PRODUCT_COPY_FILES += \
 
 # Reduce system server verbosity.
 PRODUCT_SYSTEM_SERVER_DEBUG_INFO := false
+PRODUCT_OTHER_JAVA_DEBUG_INFO := false
 
 # Rootdir
 PRODUCT_PACKAGES += \
