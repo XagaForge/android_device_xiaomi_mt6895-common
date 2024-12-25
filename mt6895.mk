@@ -170,7 +170,6 @@ PRODUCT_PACKAGES += \
     FrameworksResOverlayMT6895 \
     PowerOffAlarmOverlayMT6895 \
     TelephonyOverlayMT6895 \
-    TetheringResOverlayMT6895 \
     SettingsOverlayMT6895 \
     SystemUIOverlayMT6895 \
     WifiResOverlayMT6895
@@ -321,6 +320,9 @@ PRODUCT_PACKAGES += \
     hostapd \
     libwifi-hal-wrapper \
     android.hardware.wifi-service
+
+PRODUCT_PACKAGES += \
+    NcmTetheringOverlay
 
 PRODUCT_COPY_FILES += \
     $(call find-copy-subdir-files,*,$(LOCAL_PATH)/configs/wifi/,$(TARGET_COPY_OUT_VENDOR)/etc/wifi)
