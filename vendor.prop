@@ -239,7 +239,6 @@ debug.sf.latch_unsignaled=true
 debug.sf.auto_latch_unsignaled=false
 debug.sf.disable_client_composition_cache=1
 debug.sf.enable_hwc_vds=0
-debug.sf.enable_transaction_tracing=false
 debug.sf.predict_hwc_composition_strategy=0
 debug.sf.treat_170m_as_sRGB=1
 
