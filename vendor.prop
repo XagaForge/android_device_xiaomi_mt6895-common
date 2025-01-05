@@ -121,10 +121,8 @@ persist.vendor.mtk.volte.enable=1
 persist.vendor.vilte_support=1
 persist.vendor.viwifi_support=1
 persist.vendor.volte_support=1
-ro.telephony.iwlan_operation_mode=AP-assisted
 ro.vendor.md_auto_setup_ims=1
 ro.vendor.mtk_data_config=1
-ro.vendor.mtk_mobile_management=1
 
 # Media
 debug.stagefright.c2inputsurface=-1
