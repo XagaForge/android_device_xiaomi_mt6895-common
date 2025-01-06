@@ -19,6 +19,7 @@ on init
 
     # update cpus for cpuset cgroup
     write /dev/cpuset/foreground/cpus 0-7
+    write /dev/cpuset/foreground_window/cpus 0-7
     write /dev/cpuset/background/cpus 0-1
     write /dev/cpuset/system-background/cpus 0-2
     write /dev/cpuset/top-app/cpus 0-7
@@ -43,6 +44,8 @@ on boot
     write /dev/cpuctl/system-background/cpu.uclamp.latency_sensitive 1
     write /dev/cpuctl/foreground/cpu.uclamp.min 100
     write /dev/cpuctl/foreground/cpu.uclamp.latency_sensitive 1
+    write /dev/cpuctl/foreground_window/cpu.uclamp.min 100
+    write /dev/cpuctl/foreground_window/cpu.uclamp.latency_sensitive 1
     write /dev/cpuctl/top-app/cpu.uclamp.min 100
     write /dev/cpuctl/top-app/cpu.uclamp.latency_sensitive 1
     write /dev/cpuctl/background/cpu.uclamp.min 100
@@ -82,6 +85,11 @@ on property:sys.boot_completed=1
     write /dev/cpuctl/foreground/cpu.uclamp.max max
     write /dev/cpuctl/foreground/cpu.uclamp.min 10
     write /dev/cpuctl/foreground/cpu.uclamp.latency_sensitive 0
+
+    # foreground_window
+    write /dev/cpuctl/foreground_window/cpu.uclamp.max max
+    write /dev/cpuctl/foreground_window/cpu.uclamp.min 10
+    write /dev/cpuctl/foreground_window/cpu.uclamp.latency_sensitive 0
 
     # top-app
     write /dev/cpuctl/top-app/cpu.uclamp.max max
