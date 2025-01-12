@@ -1,8 +1,10 @@
 #
-# Copyright (C) 2023 The LineageOS Project
+# Copyright (C) 2023-2025 The LineageOS Project
 #
 # SPDX-License-Identifier: Apache-2.0
 #
+
+COMMON_PATH := device/xiaomi/mt6895-common
 
 # A/B
 AB_OTA_UPDATER := true
