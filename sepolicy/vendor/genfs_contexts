@@ -33,6 +33,7 @@ genfscon sysfs /devices/platform/soc/11d06000.i2c/i2c-9/9-0064/power_supply u:ob
 genfscon sysfs /devices/platform/soc/11d06000.i2c/i2c-9/9-0065/power_supply u:object_r:sysfs_power_supply:s0
 genfscon sysfs /devices/platform/soc/11d06000.i2c/i2c-9/9-0066/power_supply u:object_r:sysfs_power_supply:s0
 genfscon sysfs /devices/platform/soc/11d06000.i2c/i2c-9/9-0067/power_supply u:object_r:sysfs_power_supply:s0
+genfscon sysfs /devices/platform/xagapro_charger/power_supply u:object_r:sysfs_power_supply:s0
 genfscon sysfs /devices/platform/xiaomi_charge/fg_verify_digest u:object_r:sysfs_power_supply:s0
 genfscon sysfs /devices/platform/xiaomi_charge/pd_authenticate_process u:object_r:sysfs_power_supply:s0
 genfscon sysfs /devices/platform/xiaomi_charge/pd_authenticate_success u:object_r:sysfs_power_supply:s0
@@ -74,6 +75,7 @@ genfscon sysfs /devices/platform/soc/11d02000.i2c/i2c-3/3-0028/wakeup u:object_r
 genfscon sysfs /devices/platform/soc/11d03000.i2c/i2c-4/4-0037/wakeup u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/soc/11d04000.i2c/i2c-7/7-0055/power_supply/bms/wakeup u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/soc/11d04000.i2c/i2c-7/7-0055/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/11d04000.i2c/i2c-7/7-0065/power_supply/cp_slave/wakeup u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/soc/11d04000.i2c/i2c-7/7-0066/power_supply/cp_slave/wakeup u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/soc/11d05000.i2c/i2c-8/8-0010/wakeup u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/soc/11d06000.i2c/i2c-9/9-0064/power_supply/cp_master/wakeup u:object_r:sysfs_wakeup:s0
@@ -85,6 +87,11 @@ genfscon sysfs /devices/platform/soc/1e980000.gce/wakeup u:object_r:sysfs_wakeup
 genfscon sysfs /devices/platform/soc/1e990000.gce/wakeup u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/soc/1f000000.mdp/wakeup u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/soc/1f800000.mmlsys_config/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/xagapro_charger/power_supply/mtk-master-charger/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/xagapro_charger/power_supply/mtk-mst-div-chg/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/xagapro_charger/power_supply/mtk-slave-charger/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/xagapro_charger/power_supply/mtk-slv-div-chg/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/xagapro_charger/power_supply/usb/wakeup u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/xiaomi_charge/power_supply/ac/wakeup u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/xiaomi_charge/power_supply/battery/wakeup u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/xiaomi_charge/power_supply/bms/wakeup u:object_r:sysfs_wakeup:s0
