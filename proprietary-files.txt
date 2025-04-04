@@ -1,4 +1,5 @@
-# Unpinned blobs from plato-user 14 UP1A.230905.011 V816.0.15.0.ULQMIXM release-keys
+# Unpinned blobs from plato-user 15 SP1A.210812.016 OS2.0.2.0.VLQMIXM release-keys
+# duchamp: duchamp_global-user 15 UP1A.230905.011 OS2.0.100.0.VNLMIXM release-keys
 
 # AEE
 vendor/lib64/libaedv.so
@@ -239,7 +240,7 @@ vendor/lib64/vendor.mediatek.hardware.pq@2.7.so
 vendor/lib64/vendor.mediatek.hardware.pq@2.8.so
 vendor/lib64/vendor.mediatek.hardware.pq@2.9.so
 
-# Display (Thread unwinding) - from duchamp_global-user 14 UP1A.230905.011 V816.0.12.0.UNLMIXM release-keys
+# Display (Thread unwinding) - from duchamp
 vendor/lib64/libladder.so|db8bdb58e6f4a4250bb5f471fbe8ea6a12897c22
 
 # DRM
