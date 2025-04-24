@@ -26,6 +26,7 @@ on post-fs
     mkdir /config/usb_gadget/g1/functions/hid.gs0
     mkdir /config/usb_gadget/g1/functions/ncm.gs9
     mkdir /config/usb_gadget/g1/functions/uvc.0
+    write /config/usb_gadget/g1/functions/ncm.gs6/ifname ncm%d
     mkdir /config/usb_gadget/g1/configs/b.1 0770 shell shell
     mkdir /config/usb_gadget/g1/configs/b.1/strings/0x409 0770 shell shell
     write /config/usb_gadget/g1/os_desc/b_vendor_code 0x1
