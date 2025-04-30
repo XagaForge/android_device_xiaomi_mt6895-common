@@ -15,6 +15,9 @@ bluetooth.profile.pan.panu.enabled?=true
 bluetooth.profile.pbap.server.enabled?=true
 bluetooth.profile.sap.server.enabled?=true
 
+# Camera
+ro.camerax.extensions.enabled=true
+
 # FUSE passthrough
 persist.sys.fuse.passthrough.enable=true
 
