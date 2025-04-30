@@ -151,6 +151,9 @@ vendor/lib64/libbt-vendor.so
 vendor/lib64/vendor.mediatek.hardware.bluetooth.audio@2.1.so
 vendor/lib64/vendor.mediatek.hardware.bluetooth.audio@2.2.so
 
+# Camera Extensions
+system_ext/framework/camerax-vendor-extensions.jar:system/framework/camerax-vendor-extensions.jar;BOOT_JAR
+
 # Connectivity
 vendor/bin/conninfra_loader
 vendor/etc/init/init.connfem.rc
