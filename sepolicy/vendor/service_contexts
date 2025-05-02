@@ -1,0 +1,2 @@
+# Vibrator
+android.hardware.vibrator.IVibrator/vibratorfeature                          u:object_r:hal_vibrator_service:s0
