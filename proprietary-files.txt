@@ -562,6 +562,14 @@ vendor/lib64/libthhclient.so
 vendor/lib64/vendor.microtrust.hardware.thh@2.0.so
 vendor/lib64/wechat.beanpod.so
 
+# Vibrator
+vendor/bin/hw/vendor.xiaomi.hardware.vibratorfeature.service
+vendor/etc/init/vendor.xiaomi.hardware.vibratorfeature.service.rc
+vendor/etc/vintf/manifest/vendor.xiaomi.hardware.vibratorfeature.service.xml
+vendor/etc/excluded-input-devices.xml
+vendor/lib64/libaachaptics.so
+vendor/lib64/vendor.hardware.vibratorfeature.IVibratorExt-V1-ndk_platform.so
+
 # Wi-Fi
 vendor/bin/wlan_assistant
 vendor/etc/init/init.wlan_drv.rc

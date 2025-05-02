@@ -166,4 +166,5 @@
 /vendor/bin/mi_thermald                                                   u:object_r:vendor_mi_thermald_exec:s0
 
 # Vibrator
-/vendor/bin/hw/vendor\.qti\.hardware\.vibrator\.service                   u:object_r:hal_vibrator_default_exec:s0
+/(odm|system/odm|vendor|system/vendor)/bin/hw/vendor\.xiaomi\.hardware\.vibratorfeature\.service u:object_r:hal_vibrator_default_exec:s0
+/(odm|system/odm|vendor|system/vendor)/bin/hw/vibratorfeature-wrapper u:object_r:hal_vibrator_default_exec:s0
