@@ -138,7 +138,7 @@
 /dev/mi_display/disp_feature                                              u:object_r:vendor_displayfeature_device:s0
 
 # Ir
-/dev/ir_spi                                                               u:object_r:vendor_ir_spi_device:s0
+/dev/ir_spi                                                               u:object_r:lirc_device:s0
 
 # Mfidoca
 /vendor/bin/fidoca_isee                                                   u:object_r:hal_mfidoca_default_exec:s0
