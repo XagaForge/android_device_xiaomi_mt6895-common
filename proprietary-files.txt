@@ -149,10 +149,6 @@ vendor/lib64/libbt-vendor.so
 # Bluetooth (Firmware) - from aristotle
 vendor/firmware/soc7_0_ram_bt_1b_t_1_hdr.bin|629f5d0f3be59efeb1d13d4a8c48badd1b0ec219
 
-# Bluetooth (A2DP)
-vendor/lib64/vendor.mediatek.hardware.bluetooth.audio@2.1.so
-vendor/lib64/vendor.mediatek.hardware.bluetooth.audio@2.2.so
-
 # Camera Extensions
 system_ext/framework/camerax-vendor-extensions.jar:system/framework/camerax-vendor-extensions.jar;BOOT_JAR
 
