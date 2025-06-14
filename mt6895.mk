@@ -136,6 +136,18 @@ PRODUCT_PACKAGES += \
 # IMS
 $(call inherit-product, vendor/mediatek/ims/ims.mk)
 
+# Keymaster
+PRODUCT_PACKAGES += \
+    libkeymaster_messages.vendor \
+    libkeymaster_portable.vendor
+
+# Keymint
+PRODUCT_PACKAGES += \
+    android.hardware.security.keymint-V3-ndk.vendor \
+    lib_android_keymaster_keymint_utils.vendor \
+    libcppbor_external.vendor \
+    libkeymint.vendor
+
 # Light
 PRODUCT_PACKAGES += \
     android.hardware.light-service.lineage

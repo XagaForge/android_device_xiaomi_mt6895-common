@@ -36,7 +36,7 @@ blob_fixups: blob_fixups_user_type = {
         .add_needed('libstagefright_foundation-v33.so')
         .replace_needed('libavservices_minijail_vendor.so', 'libavservices_minijail.so'),
     'vendor/bin/hw/android.hardware.security.keymint@1.0-service.beanpod': blob_fixup()
-        .replace_needed('android.hardware.security.keymint-V1-ndk_platform.so', 'android.hardware.security.keymint-V4-ndk.so')
+        .replace_needed('android.hardware.security.keymint-V1-ndk_platform.so', 'android.hardware.security.keymint-V3-ndk.so')
         .replace_needed('android.hardware.security.sharedsecret-V1-ndk_platform.so', 'android.hardware.security.sharedsecret-V1-ndk.so')
         .replace_needed('android.hardware.security.secureclock-V1-ndk_platform.so', 'android.hardware.security.secureclock-V1-ndk.so')
         .add_needed('android.hardware.security.rkp-V3-ndk.so'),
