@@ -231,7 +231,6 @@ ro.hardware.wechat=beanpod
 ro.hardware.kmsetkey=beanpod
 ro.hardware.gatekeeper=beanpod
 ro.vendor.mtk_microtrust_tee_support=1
-ro.hardware.wechat=beanpod
 
 # UVC
 ro.usb.uvc.enabled=true
