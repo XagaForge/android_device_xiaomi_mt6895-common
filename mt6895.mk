@@ -134,8 +134,7 @@ PRODUCT_PACKAGES += \
     IFAAService
 
 # IMS
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/permissions/privapp-permissions-com.mediatek.ims.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/permissions/privapp-permissions-com.mediatek.ims.xml
+$(call inherit-product, vendor/mediatek/ims/ims.mk)
 
 # Light
 PRODUCT_PACKAGES += \
@@ -163,7 +162,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     FrameworksResOverlayMT6895 \
     PowerOffAlarmOverlayMT6895 \
-    TelephonyOverlayMT6895 \
     SettingsOverlayMT6895 \
     SettingsProviderResOverlayMT6895 \
     SystemUIOverlayMT6895 \
