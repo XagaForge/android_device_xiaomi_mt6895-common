@@ -11,6 +11,7 @@ import android.content.Context
 import android.content.Intent
 import android.util.Log
 import org.lineageos.settings.thermal.ThermalUtils
+import org.lineageos.settings.gestures.GestureUtils
 
 /** Everything begins at boot. */
 class BootCompletedReceiverMain : BroadcastReceiver() {
@@ -19,8 +20,9 @@ class BootCompletedReceiverMain : BroadcastReceiver() {
         Log.d(TAG, "Received intent: ${intent.action}")
         if (intent.action != Intent.ACTION_LOCKED_BOOT_COMPLETED) return
 
-        Log.i(TAG, "Boot completed, starting service")
+        Log.i(TAG, "Boot completed, starting services")
         ThermalUtils.getInstance(context).startService()
+        GestureUtils.onBootCompleted(context)
     }
 
     companion object {

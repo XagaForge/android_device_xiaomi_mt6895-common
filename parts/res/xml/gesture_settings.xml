@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     SPDX-FileCopyrightText: 2024-2025 Paranoid Android
+     SPDX-License-Identifier: Apache-2.0
+-->
+<PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:title="@string/gestures_title">
+    
+    <ListPreference
+        android:key="back_double_tap"
+        android:entries="@array/gesture_action_entries"
+        android:entryValues="@array/gesture_action_values"
+        android:defaultValue="0"
+        android:title="@string/back_double_tap_title"
+        android:summary="%s" />
+    
+    <ListPreference
+        android:key="back_triple_tap"
+        android:entries="@array/gesture_action_entries"
+        android:entryValues="@array/gesture_action_values"
+        android:defaultValue="0"
+        android:title="@string/back_triple_tap_title"
+        android:summary="%s" />
+
+    <com.android.settingslib.widget.FooterPreference
+        android:key="gestures_footer"
+        android:title="@string/gestures_footer_text"
+        android:selectable="false" />
+
+</PreferenceScreen>

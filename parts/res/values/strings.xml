@@ -44,4 +44,29 @@
     <string name="refresh_medium">90Hz</string>
     <string name="refresh_high">120Hz</string>
     <string name="refresh_extreme">144Hz</string>
+
+     <!-- Gestures -->
+     <string name="gestures_title">Device-specific gestures</string>
+     <string name="gestures_summary_back_tap">Back tap</string>
+     <string name="gestures_footer_text">
+          Back tap gesture works only when the screen is on.
+          It may not work perfectly when your device has a case equiped.
+     </string>
+     <string name="back_double_tap_title">Double tap on back of phone to</string>
+     <string name="back_triple_tap_title">Triple tap on back of phone to</string>
+     <string name="action_off">Do nothing</string>
+     <string name="action_screenshot">Take a screenshot</string>
+     <string name="action_assistant">Access your digital assistant</string>
+     <string name="action_play_pause">Play or pause media</string>
+     <string name="action_notifications">Expand notification panel</string>
+     <string name="action_camera">Open camera</string>
+     <string name="action_flashlight">Toggle flashlight</string>
+     <string name="action_mute">Switch ringer mode (mute)</string>
+     <string name="action_vibrate">Switch ringer mode (vibrate)</string>
+     <string name="action_volume">Show volume panel</string>
+     <string name="action_sleep">Turn off screen</string>
+     <string name="gesture_unavailable">Unavailable on device</string>
+
+     <!-- Common -->
+     <string name="unknown">Unknown</string>
 </resources>
