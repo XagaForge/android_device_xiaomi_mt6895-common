@@ -284,6 +284,18 @@
       "HoldFd": true
     },
     {
+      "Name": "GPUBlockBoost",
+      "Path": "/sys/kernel/ged/hal/gpu_boost_level",
+      "Values": [
+        "101",
+        "50",
+        "0",
+        "-1"
+      ],
+      "ResetOnInit": true,
+      "DefaultIndex": 2
+    },
+    {
       "Name": "UclampTAMin",
       "Path": "/dev/cpuctl/top-app/cpu.uclamp.min",
       "Values": [
@@ -412,9 +424,21 @@
     },
     {
       "PowerHint": "EXPENSIVE_RENDERING",
+      "Node": "CPUBigClusterMinFreq",
+      "Duration": 0,
+      "Value": "2000000"
+    },
+    {
+      "PowerHint": "EXPENSIVE_RENDERING",
       "Node": "GpuPwrLevel",
       "Duration": 0,
       "Value": "0"
+    },
+    {
+      "PowerHint": "EXPENSIVE_RENDERING",
+      "Node": "GPUBlockBoost",
+      "Duration": 0,
+      "Value": "50"
     },
     {
       "PowerHint": "ML_ACC",
