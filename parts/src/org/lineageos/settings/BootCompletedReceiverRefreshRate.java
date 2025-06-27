@@ -23,18 +23,20 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.util.Log;
 
-import org.lineageos.settings.thermal.ThermalUtils;
 import org.lineageos.settings.refreshrate.RefreshUtils;
 
-public class BootCompletedReceiver extends BroadcastReceiver {
+public class BootCompletedReceiverRefreshRate extends BroadcastReceiver {
 
-    private static final boolean DEBUG = false;
-    private static final String TAG = "XiaomiParts";
+    private static final String TAG = "XiaomiParts-RefreshRate-BCR";
 
     @Override
     public void onReceive(final Context context, Intent intent) {
-        if (DEBUG) Log.d(TAG, "Received boot completed intent");
-        ThermalUtils.startService(context);
-        RefreshUtils.startService(context);
+      Log.d(TAG, "Received intent: " + intent.getAction());
+        if (!intent.getAction().equals(Intent.ACTION_LOCKED_BOOT_COMPLETED)) {
+            return;
+        }
+
+        Log.i(TAG, "Boot completed, starting RefreshRate");
+        RefreshUtils.initialize(context);
     }
 }
