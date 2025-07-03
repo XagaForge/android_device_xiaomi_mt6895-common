@@ -5,7 +5,6 @@
   SPDX-License-Identifier: Apache-2.0
 -->
 <resources>
-
     <!-- Defines the actions shown in advanced reboot submenu -->
     <string-array name="config_restartActionsList">
         <item>restart</item>
@@ -13,4 +12,21 @@
         <item>restart_bootloader</item>
         <item>restart_systemui</item>
      </string-array>
+
+    <!-- Some devices might require always setting the toggle instead of set based on current toggle
+         value. If this is the case, set this config to true to let the toggle provider always set
+         charging enabled status regardless of the current status. -->
+    <bool name="config_chargingControlToggleSetAlways">true</bool>
+
+    <!-- Considering the fact that the system might have an incorrect estimation of the time to
+         full. Set a time margin to make the device fully charged before the target time arrives.
+         The unit is minutes and the default value is 30 minutes. If you find that it is not enough
+         to make the device to be fully charged at the target time, increase the value -->
+    <integer name="config_chargingControlTimeMargin">45</integer>
+
+    <!-- For a device that cannot bypass battery when charging stops (that is, the battery current
+         is 0mA when charging stops), the battery will gradually discharge. So we need to make it
+         recharge when the battery level is lower than a threshold. Set this so that the device
+         will be charged between (limit - val) and limit. -->
+    <integer name="config_chargingControlBatteryRechargeMargin">3</integer>
 </resources>
