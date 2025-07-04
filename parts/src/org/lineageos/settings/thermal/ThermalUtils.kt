@@ -193,7 +193,7 @@ private constructor(
         ),
         DEFAULT(
             8,
-            "0", // thermal-normal.conf
+            "30", // thermal-per-normal.conf
             "thermal.default=",
             R.string.thermal_default,
         ),
@@ -205,7 +205,7 @@ private constructor(
         private const val THERMAL_ENABLED = "thermal_enabled"
 
         private const val THERMAL_SCONFIG = "/sys/devices/virtual/thermal/thermal_message/sconfig"
-        private const val THERMAL_STATE_OFF = "0" // thermal-normal.conf
+        private const val THERMAL_STATE_OFF = "30" // thermal-per-normal.conf
 
         // Empty value to store if shared preference is null
         private val DEFAULT_VALUE = ThermalState.values().map { it.prefix }.joinToString(":")
