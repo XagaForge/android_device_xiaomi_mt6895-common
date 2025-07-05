@@ -184,6 +184,7 @@ WIFI_HAL_INTERFACE_COMBINATIONS += ,{{{STA}, 1}, {{P2P}, 1}}
 WIFI_HAL_INTERFACE_COMBINATIONS += ,{{{STA}, 1}, {{NAN}, 1}}
 WIFI_HIDL_UNIFIED_SUPPLICANT_SERVICE_RC_ENTRY := true
 WIFI_FEATURE_HOSTAPD_11AX := true
+WIFI_FEATURE_SUPPLICANT_11AX := true
 
 # Inherit the proprietary files
 include vendor/xiaomi/mt6895-common/BoardConfigVendor.mk
