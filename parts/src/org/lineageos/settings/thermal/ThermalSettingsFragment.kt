@@ -159,7 +159,7 @@ class ThermalSettingsFragment : PreferenceFragment() {
                     .getActivityList(null, Process.myUserHandle())
                     .distinctBy { it.componentName.packageName } // Filter out duplicates
                     .map { it.toAppEntry() }
-                    .sortedBy { it.label.toString().toLowerCase() } // Sort case-insensitively
+                    .sortedBy { it.label.toString().lowercase() } // Sort case-insensitively
             dlog(TAG, "loaded ${appEntries.size} apps")
             appsAdapter.run {
                 entries.clear()
