@@ -325,6 +325,7 @@ system_ext/framework/mediatek-telecom-common.jar
 system_ext/framework/mediatek-telephony-base.jar
 system_ext/framework/mediatek-telephony-common.jar
 system_ext/priv-app/ImsService/ImsService.apk
+system_ext/priv-app/MtkGbaService/MtkGbaService.apk
 vendor/bin/hw/vtservice_hidl
 vendor/etc/init/init.vtservice_hidl.rc
 vendor/lib64/hw/vendor.mediatek.hardware.videotelephony@1.0-impl.so
