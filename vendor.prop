@@ -224,9 +224,6 @@ ro.vendor.mtk_microtrust_tee_support=1
 # UVC
 ro.usb.uvc.enabled=true
 
-# Verity
-ro.apk_verity.mode=2
-
 # Wi-Fi
 ro.vendor.wifi.sap.concurrent.iface=ap1
 ro.vendor.wifi.sap.interface=ap0
