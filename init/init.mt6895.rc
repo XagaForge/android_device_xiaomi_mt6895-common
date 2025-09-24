@@ -33,8 +33,6 @@ on charger
     chown system system /dev/dri/card0
 
 on fs
-    wait_for_prop hwservicemanager.ready "true"
-
     # mount fstab
     mount_all --early
 
@@ -48,8 +46,6 @@ on fs
     restorecon_recursive /mnt/rescue
 
 on late-fs
-    wait_for_prop hwservicemanager.ready "true"
-
     mount_all --late
 
 on post-fs
