@@ -832,14 +832,6 @@ on property:vold.decrypt=trigger_reset_main
     setprop sys.boot_completed 0
     setprop dev.bootcomplete 0
 
-on property:vold.decrypt=trigger_restart_min_framework
-    start msensord
-    start permission_check
-
-on property:vold.decrypt=trigger_restart_framework
-    start msensord
-    start permission_check
-
 on property:vold.decrypt=trigger_shutdown_framework
     setprop sys.boot_completed 0
     setprop dev.bootcomplete 0
