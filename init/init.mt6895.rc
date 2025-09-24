@@ -34,7 +34,6 @@ on charger
 
 on fs
     wait_for_prop hwservicemanager.ready "true"
-    start vendor.boot-hal-1-2
 
     # mount fstab
     mount_all --early
