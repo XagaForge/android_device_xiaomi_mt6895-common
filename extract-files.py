@@ -49,10 +49,8 @@ blob_fixups: blob_fixups_user_type = {
         .replace_needed('libsink.so', 'libsink-mtk.so'),
     ('system_ext/etc/init/init.vtservice.rc', 'vendor/etc/init/android.hardware.neuralnetworks-shim-service-mtk.rc'): blob_fixup()
         .regex_replace('start', 'enable'),
-    'vendor/etc/init/android.hardware.media.c2@1.2-mediatek-64b.rc': blob_fixup()
-        .add_line_if_missing('    interface android.hardware.media.c2@1.0::IComponentStore default')
-        .add_line_if_missing('    interface android.hardware.media.c2@1.1::IComponentStore default')
-        .add_line_if_missing('    interface android.hardware.media.c2@1.2::IComponentStore default'),
+    'vendor/etc/vintf/manifest/manifest_media_c2_V1_2_default.xml': blob_fixup()
+        .regex_replace('1.1', '1.2'),
     'vendor/etc/public.libraries.txt': blob_fixup()
         .add_line_if_missing('libmpbase.so'),
     ('vendor/bin/hw/android.hardware.gnss-service.mediatek', 'vendor/lib64/hw/android.hardware.gnss-impl-mediatek.so'): blob_fixup()
