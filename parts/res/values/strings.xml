@@ -15,9 +15,15 @@
      limitations under the License.
 -->
 <resources>
+
+    <!-- Xiaomi Parts -->
+    <string name="app_name">Xiaomi Parts</string>
+
     <!-- Thermal Profiles -->
-    <string name="thermal_title">Thermal Profiles</string>
-    <string name="thermal_summary">Adjust per-app thermal profiles for optimum performance</string>
+    <string name="thermal_title">Thermal profiles</string>
+    <string name="thermal_enable">Use thermal profiles</string>
+    <string name="thermal_summary">Per-app thermal profile configuration</string>
+    <string name="thermal_loading">Loading...</string>
     <string name="thermal_default">Default</string>
     <string name="thermal_benchmark">Benchmark</string>
     <string name="thermal_browser">Browser</string>
@@ -27,4 +33,6 @@
     <string name="thermal_navigation">Navigation</string>
     <string name="thermal_streaming">Streaming</string>
     <string name="thermal_video">Video</string>
+    <string name="thermal_reset">Reset to defaults</string>
+    <string name="thermal_reset_message">Are you sure you want to reset thermal profile for all apps?</string>
 </resources>
