@@ -184,6 +184,16 @@
          meanings. -->
     <integer name="config_defaultRingVibrationIntensity">3</integer>
 
+    <!-- The fixed keyboard vibration strength in [0,1], or -1 to indicate the strength not fixed
+         and should depend on the touch feedback intensity user setting -->
+    <item name="config_keyboardHapticFeedbackFixedAmplitude" type="dimen">0.62</item>
+
+    <!-- Indicating if keyboard vibration settings supported or not. -->
+    <bool name="config_keyboardVibrationSettingsSupported">true</bool>
+
+    <!-- Indicating if ringtone vibration settings supported or not. -->
+    <bool name="config_ringtoneVibrationSettingsSupported">true</bool>
+
     <!-- Control whether Night display is available. This should only be enabled on devices
          that have a HWC implementation that can apply the matrix passed to setColorTransform
          without impacting power, performance, and app compatibility (e.g. protected content). -->
