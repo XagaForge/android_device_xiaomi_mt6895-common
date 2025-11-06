@@ -24,6 +24,12 @@ on init
     write /dev/cpuset/system-background/cpus 0-2
     write /dev/cpuset/top-app/cpus 0-7
 
+    # sched
+    write /proc/sys/kernel/sched_migration_cost_ns 250000
+    write /proc/sys/kernel/sched_latency_ns 4000000
+    write /proc/sys/kernel/sched_min_granularity_ns 500000
+    write /proc/sys/kernel/sched_wakeup_granularity_ns 2000000
+
 on post-fs-data
     # Disable watermark boost
     write /proc/sys/vm/watermark_boost_factor 0
@@ -66,7 +72,6 @@ on property:sys.boot_completed=1
     write /sys/block/sdc/queue/nr_requests 64
 
     write /sys/devices/platform/soc/112b0000.ufshci/clkgate_enable 1
-    write /proc/sys/kernel/sched_migration_cost_ns 200000
 
     # restore boot perf. tune
     write /sys/devices/system/cpu/cpufreq/policy0/scaling_min_freq 0
