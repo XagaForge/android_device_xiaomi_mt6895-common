@@ -306,6 +306,7 @@ PRODUCT_SOONG_NAMESPACES += \
     hardware/lineage/interfaces/power-libperfmgr \
     hardware/mediatek \
     hardware/mediatek/libmtkperf_client \
+    hardware/mediatek/wlan/wifi_hal \
     hardware/xiaomi
 
 # Speed profile services and wifi-service to reduce RAM and storage.
@@ -331,10 +332,11 @@ PRODUCT_PACKAGES += \
     vibratorfeature-wrapper
 
 # Wi-Fi
+$(call soong_config_set,wpa_supplicant_8,board_wlan_mediatek_stability,true)
+
 PRODUCT_PACKAGES += \
     wpa_supplicant \
     hostapd \
-    libwifi-hal-wrapper \
     android.hardware.wifi-service
 
 PRODUCT_PACKAGES += \
