@@ -3,9 +3,6 @@
 # rothko: rothko_global_user 16 BP2A.250605.015 OS2.0.215.0.WNNMIXM release-keys
 # plato V14.0.7.0.ULQMIXM: plato-user 14 SP1A.210812.016 V14.0.7.0.ULQMIXM release-keys
 
-# AEE
-vendor/lib64/libaedv.so
-
 # Audio
 vendor/lib64/hw/audio.r_submix.mediatek.so;SYMLINK=vendor/lib64/hw/audio.r_submix.mt6895.so
 vendor/lib64/hw/sound_trigger.primary.default.so
