@@ -3,9 +3,6 @@
 # duchamp: duchamp_global-user 15 UP1A.230905.011 OS2.0.100.0.VNLMIXM release-keys
 # plato V14.0.7.0.ULQMIXM: plato-user 14 SP1A.210812.016 V14.0.7.0.ULQMIXM release-keys
 
-# AEE
-vendor/lib64/libaedv.so
-
 # Audio
 vendor/lib64/hw/sound_trigger.primary.default.so
 vendor/lib64/libMtkSpeechEnh.so
@@ -222,7 +219,6 @@ vendor/lib64/libion_mtk.so
 vendor/lib64/libion_ulit.so
 vendor/lib64/libmml.so
 vendor/lib64/libpqframework.so
-vendor/lib64/libudf.so
 vendor/lib64/vendor.mediatek.hardware.composer_ext@1.0.so
 vendor/lib64/vendor.mediatek.hardware.pq@2.0.so
 vendor/lib64/vendor.mediatek.hardware.pq@2.1.so
@@ -240,9 +236,6 @@ vendor/lib64/vendor.mediatek.hardware.pq@2.6.so
 vendor/lib64/vendor.mediatek.hardware.pq@2.7.so
 vendor/lib64/vendor.mediatek.hardware.pq@2.8.so
 vendor/lib64/vendor.mediatek.hardware.pq@2.9.so
-
-# Display (Thread unwinding) - from duchamp
-vendor/lib64/libladder.so|db8bdb58e6f4a4250bb5f471fbe8ea6a12897c22
 
 # DRM
 vendor/lib64/mediadrm/libwvdrmengine.so
