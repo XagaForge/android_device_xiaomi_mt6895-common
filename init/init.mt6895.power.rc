@@ -89,7 +89,7 @@ on property:sys.boot_completed=1
     write /dev/cpuctl/system-background/cpu.uclamp.latency_sensitive 0
     write /dev/cpuctl/system-background/cpu.uclamp.max 60
     write /dev/cpuctl/system-background/cpu.uclamp.min 0
-    write /dev/cpuctl/system-background/cpu.shares 2048
+    write /dev/cpuctl/system-background/cpu.shares 1024
 
     # background
     write /dev/cpuctl/background/cpu.uclamp.latency_sensitive 0
@@ -131,7 +131,7 @@ on property:sys.boot_completed=1
     write /dev/cpuctl/dex2oat/cpu.uclamp.latency_sensitive 0
     write /dev/cpuctl/dex2oat/cpu.uclamp.max 60
     write /dev/cpuctl/dex2oat/cpu.uclamp.min 0
-    write /dev/cpuctl/dex2oat/cpu.shares 2048
+    write /dev/cpuctl/dex2oat/cpu.shares 512
 
     # Enable PowerHAL hint processing
     setprop vendor.powerhal.init 1
