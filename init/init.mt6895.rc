@@ -29,6 +29,9 @@ on charger
     write /sys/class/leds/lcd-backlight/brightness 1000
     write /sys/class/leds/lcd-backlight/trigger "backlight-drm"
 
+    chown system system /dev/graphics/fb0
+    chown system system /dev/dri/card0
+
 on fs
     wait_for_prop hwservicemanager.ready "true"
     start vendor.boot-hal-1-2
