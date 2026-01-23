@@ -316,8 +316,6 @@ system_ext/lib64/vendor.mediatek.hardware.videotelephony-V1-ndk.so|8b13966bdf703
 system_ext/lib64/vendor.mediatek.hardware.videotelephony@1.0.so|01b68c7597d585ec39441628f66b02b3b091db99
 
 # IMS
-system_ext/framework/mediatek-common.jar
-system_ext/framework/mediatek-framework.jar
 system_ext/framework/mediatek-ims-base.jar
 system_ext/framework/mediatek-ims-common.jar
 system_ext/framework/mediatek-ims-extension-plugin.jar

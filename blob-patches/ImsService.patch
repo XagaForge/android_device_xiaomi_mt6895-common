@@ -2,12 +2,11 @@ diff --git a/AndroidManifest.xml b/AndroidManifest.xml
 index d81ae85..4bd0c3e 100644
 --- a/AndroidManifest.xml
 +++ b/AndroidManifest.xml
-@@ -51,6 +51,13 @@
+@@ -51,6 +51,12 @@
      <application android:allowBackup="false" android:appComponentFactory="androidx.core.app.CoreComponentFactory" android:directBootAware="true" android:extractNativeLibs="false" android:label="ImsApp" android:name="com.mediatek.ims.ImsApp" android:persistent="true" android:usesNonSdkApi="true">
          <uses-library android:name="com.mediatek.ims.oemplugin" android:required="false"/>
          <uses-library android:name="com.mediatek.ims.plugin" android:required="false"/>
 +        <uses-library android:name="mediatek-common" android:required="true"/>
-+        <uses-library android:name="mediatek-framework" android:required="true"/>
 +        <uses-library android:name="mediatek-ims-base" android:required="true"/>
 +        <uses-library android:name="mediatek-ims-common" android:required="true"/>
 +        <uses-library android:name="mediatek-telecom-common" android:required="true"/>
