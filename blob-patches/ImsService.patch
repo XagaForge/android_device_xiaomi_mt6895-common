@@ -16,6 +16,13 @@ index d81ae85..4bd0c3e 100644
          <service android:exported="true" android:name="com.mediatek.ims.MtkDynamicImsService" android:permission="android.permission.BIND_IMS_SERVICE">
              <meta-data android:name="android.telephony.ims.RCS_FEATURE" android:value="true"/>
              <meta-data android:name="android.telephony.ims.MMTEL_FEATURE" android:value="true"/>
+@@ -82,4 +89,4 @@
+             </intent-filter>
+         </receiver>
+     </application>
+-</manifest>
+\ No newline at end of file
++</manifest>
 diff --git a/smali/com/mediatek/ims/ImsConfigManager.smali b/smali/com/mediatek/ims/ImsConfigManager.smali
 index d287579..99367fe 100644
 --- a/smali/com/mediatek/ims/ImsConfigManager.smali
@@ -40,21 +47,6 @@ index d287579..99367fe 100644
  
      .line 151
      return-void
-diff --git a/smali/com/mediatek/ims/ImsService$MyHandler.smali b/smali/com/mediatek/ims/ImsService$MyHandler.smali
-index 7c0dc16..e5758ae 100644
---- a/smali/com/mediatek/ims/ImsService$MyHandler.smali
-+++ b/smali/com/mediatek/ims/ImsService$MyHandler.smali
-@@ -3255,7 +3255,9 @@
- 
-     move-result-object v7
- 
--    invoke-virtual {v6, v7, v5}, Landroid/content/Context;->registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;)Landroid/content/Intent;
-+    const/4 v8, 0x2
-+
-+    invoke-virtual {v6, v7, v5, v8}, Landroid/content/Context;->registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;I)Landroid/content/Intent;
- 
-     .line 2757
-     .end local v5    # "filter":Landroid/content/IntentFilter;
 diff --git a/smali/com/mediatek/ims/MtkSuppServExt.smali b/smali/com/mediatek/ims/MtkSuppServExt.smali
 index 677c026..a41c4da 100644
 --- a/smali/com/mediatek/ims/MtkSuppServExt.smali
@@ -127,6 +119,30 @@ index d4863a7..d3b7311 100644
  
      .line 859
      .end local v0    # "filter":Landroid/content/IntentFilter;
+diff --git a/smali/com/mediatek/ims/rcs/MtkRcsCapabilityExchangeImpl.smali b/smali/com/mediatek/ims/rcs/MtkRcsCapabilityExchangeImpl.smali
+index aab7b89..2b0383c 100644
+--- a/smali/com/mediatek/ims/rcs/MtkRcsCapabilityExchangeImpl.smali
++++ b/smali/com/mediatek/ims/rcs/MtkRcsCapabilityExchangeImpl.smali
+@@ -220,7 +220,7 @@
+ .end method
+ 
+ .method public constructor <init>(ILandroid/content/Context;Landroid/telephony/ims/stub/CapabilityExchangeEventListener;)V
+-    .locals 5
++    .locals 6
+     .param p1, "slotId"    # I
+     .param p2, "context"    # Landroid/content/Context;
+     .param p3, "listener"    # Landroid/telephony/ims/stub/CapabilityExchangeEventListener;
+@@ -384,7 +384,9 @@
+ 
+     invoke-direct {v3, v4}, Landroid/content/IntentFilter;-><init>(Ljava/lang/String;)V
+ 
+-    invoke-virtual {v1, v2, v3}, Landroid/content/Context;->registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;)Landroid/content/Intent;
++    const/4 v4, 0x2
++
++    invoke-virtual {v1, v2, v3, v4}, Landroid/content/Context;->registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;I)Landroid/content/Intent;
+ 
+     goto :goto_0
+ 
 diff --git a/smali/com/mediatek/wfo/impl/ImsLocationHandler.smali b/smali/com/mediatek/wfo/impl/ImsLocationHandler.smali
 index 509ed5e..69e7cc1 100644
 --- a/smali/com/mediatek/wfo/impl/ImsLocationHandler.smali
@@ -179,10 +195,10 @@ index 6d89329..394c9f4 100644
      .line 125
      .end local v2    # "multiSimConfigChanged":Landroid/content/IntentFilter;
 diff --git a/smali/com/mediatek/wfo/impl/WfcHandler.smali b/smali/com/mediatek/wfo/impl/WfcHandler.smali
-index 34553ea..dc9b261 100644
+index 3d7370d..890ff03 100644
 --- a/smali/com/mediatek/wfo/impl/WfcHandler.smali
 +++ b/smali/com/mediatek/wfo/impl/WfcHandler.smali
-@@ -3270,7 +3270,7 @@
+@@ -3254,7 +3254,7 @@
  .end method
  
  .method private registerForBroadcast()V
@@ -191,7 +207,7 @@ index 34553ea..dc9b261 100644
  
      .line 578
      new-instance v0, Landroid/content/IntentFilter;
-@@ -3323,7 +3323,9 @@
+@@ -3307,7 +3307,9 @@
  
      iget-object v2, p0, Lcom/mediatek/wfo/impl/WfcHandler;->mReceiver:Landroid/content/BroadcastReceiver;
  
@@ -203,7 +219,7 @@ index 34553ea..dc9b261 100644
      .line 590
      return-void
 diff --git a/smali/com/mediatek/wfo/impl/WifiPdnHandler.smali b/smali/com/mediatek/wfo/impl/WifiPdnHandler.smali
-index d0f17b0..e1de55c 100644
+index d0f17b0..5ec5c3f 100644
 --- a/smali/com/mediatek/wfo/impl/WifiPdnHandler.smali
 +++ b/smali/com/mediatek/wfo/impl/WifiPdnHandler.smali
 @@ -3412,7 +3412,7 @@
@@ -222,7 +238,293 @@ index d0f17b0..e1de55c 100644
 -    invoke-virtual {v1, v2, v0}, Landroid/content/Context;->registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;)Landroid/content/Intent;
 +    const/4 v3, 0x2
 +
-+    invoke-virtual {v1, v2, v0, v3}, Landroid/content/Context;->registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;I)Landroid/content/Intent;
++    invoke-virtual {v1, v2, v0, v3 }, Landroid/content/Context;->registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;I)Landroid/content/Intent;
  
      .line 772
      return-void
+diff --git a/smali/com/mediatek/ims/ril/ImsRILAdapter$RilHandler.smali b/smali/com/mediatek/ims/ril/ImsRILAdapter$RilHandler.smali
+index d60eeb2..9290735 100644
+--- a/smali/com/mediatek/ims/ril/ImsRILAdapter$RilHandler.smali
++++ b/smali/com/mediatek/ims/ril/ImsRILAdapter$RilHandler.smali
+@@ -1059,28 +1059,6 @@
+ 
+     invoke-virtual {v3}, Landroid/os/Message;->sendToTarget()V
+ 
+-    .line 683
+-    iget-object v3, p0, Lcom/mediatek/ims/ril/ImsRILAdapter$RilHandler;->this$0:Lcom/mediatek/ims/ril/ImsRILAdapter;
+-
+-    invoke-static {v3}, Lcom/mediatek/ims/ril/ImsRILAdapter;->-$$Nest$fgetmMetrics(Lcom/mediatek/ims/ril/ImsRILAdapter;)Lcom/android/internal/telephony/metrics/TelephonyMetrics;
+-
+-    move-result-object v3
+-
+-    iget-object v4, p0, Lcom/mediatek/ims/ril/ImsRILAdapter$RilHandler;->this$0:Lcom/mediatek/ims/ril/ImsRILAdapter;
+-
+-    iget-object v4, v4, Lcom/mediatek/ims/ril/ImsRILAdapter;->mPhoneId:Ljava/lang/Integer;
+-
+-    invoke-virtual {v4}, Ljava/lang/Integer;->intValue()I
+-
+-    move-result v4
+-
+-    iget v5, v1, Lcom/mediatek/ims/ril/RILRequest;->mSerial:I
+-
+-    iget v6, v1, Lcom/mediatek/ims/ril/RILRequest;->mRequest:I
+-
+-    invoke-virtual {v3, v4, v5, v6}, Lcom/android/internal/telephony/metrics/TelephonyMetrics;->writeOnRilTimeoutResponse(III)V
+-
+-    .line 686
+     .end local v2    # "timeoutResponse":Ljava/lang/Object;
+     :cond_6
+     iget-object v2, p0, Lcom/mediatek/ims/ril/ImsRILAdapter$RilHandler;->this$0:Lcom/mediatek/ims/ril/ImsRILAdapter;
+@@ -1302,8 +1280,6 @@
+     :goto_2
+     return-void
+ 
+-    nop
+-
+     :pswitch_data_0
+     .packed-switch 0x2
+         :pswitch_a
+diff --git a/smali/com/mediatek/ims/ril/ImsRILAdapter.smali b/smali/com/mediatek/ims/ril/ImsRILAdapter.smali
+index 36b4129..94e6fac 100644
+--- a/smali/com/mediatek/ims/ril/ImsRILAdapter.smali
++++ b/smali/com/mediatek/ims/ril/ImsRILAdapter.smali
+@@ -176,8 +176,6 @@
+ 
+ .field mLastNITZTimeInfo:[Ljava/lang/Object;
+ 
+-.field private mMetrics:Lcom/android/internal/telephony/metrics/TelephonyMetrics;
+-
+ .field public mModemIndication:Lcom/mediatek/ims/ril/ModemIndication;
+ 
+ .field public mModemResponse:Lcom/mediatek/ims/ril/ModemResponse;
+@@ -322,14 +320,6 @@
+ 
+ 
+ # direct methods
+-.method static bridge synthetic -$$Nest$fgetmMetrics(Lcom/mediatek/ims/ril/ImsRILAdapter;)Lcom/android/internal/telephony/metrics/TelephonyMetrics;
+-    .locals 0
+-
+-    iget-object p0, p0, Lcom/mediatek/ims/ril/ImsRILAdapter;->mMetrics:Lcom/android/internal/telephony/metrics/TelephonyMetrics;
+-
+-    return-object p0
+-.end method
+-
+ .method static bridge synthetic -$$Nest$fgetmMtkRadioVersion(Lcom/mediatek/ims/ril/ImsRILAdapter;)Ljava/util/Map;
+     .locals 0
+ 
+@@ -695,13 +685,6 @@
+     iput-object v0, v1, Lcom/mediatek/ims/ril/ImsRILAdapter;->mMtkRadioVersion:Ljava/util/Map;
+ 
+     .line 422
+-    invoke-static {}, Lcom/android/internal/telephony/metrics/TelephonyMetrics;->getInstance()Lcom/android/internal/telephony/metrics/TelephonyMetrics;
+-
+-    move-result-object v0
+-
+-    iput-object v0, v1, Lcom/mediatek/ims/ril/ImsRILAdapter;->mMetrics:Lcom/android/internal/telephony/metrics/TelephonyMetrics;
+-
+-    .line 429
+     new-instance v0, Lcom/mediatek/ims/ril/ImsRILAdapter$DtmfQueueHandler;
+ 
+     invoke-direct {v0, v1}, Lcom/mediatek/ims/ril/ImsRILAdapter$DtmfQueueHandler;-><init>(Lcom/mediatek/ims/ril/ImsRILAdapter;)V
+@@ -5244,23 +5227,6 @@
+     .line 4267
+     :cond_1
+     :goto_0
+-    iget-object v1, p0, Lcom/mediatek/ims/ril/ImsRILAdapter;->mMetrics:Lcom/android/internal/telephony/metrics/TelephonyMetrics;
+-
+-    iget-object v0, p0, Lcom/mediatek/ims/ril/ImsRILAdapter;->mPhoneId:Ljava/lang/Integer;
+-
+-    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
+-
+-    move-result v2
+-
+-    iget v3, p1, Lcom/mediatek/ims/ril/RILRequest;->mSerial:I
+-
+-    iget v5, p1, Lcom/mediatek/ims/ril/RILRequest;->mRequest:I
+-
+-    move v4, p2
+-
+-    move-object v6, p4
+-
+-    invoke-virtual/range {v1 .. v6}, Lcom/android/internal/telephony/metrics/TelephonyMetrics;->writeOnRilSolicitedResponse(IIIILjava/lang/Object;)V
+ 
+     .line 4270
+     iget v0, p1, Lcom/mediatek/ims/ril/RILRequest;->mRequest:I
+@@ -8264,18 +8230,6 @@
+ 
+     invoke-virtual {v0, v2}, Lcom/mediatek/ims/ril/RadioVoiceProxy;->acceptCall(I)V
+ 
+-    .line 1689
+-    iget-object v2, p0, Lcom/mediatek/ims/ril/ImsRILAdapter;->mMetrics:Lcom/android/internal/telephony/metrics/TelephonyMetrics;
+-
+-    iget-object v3, p0, Lcom/mediatek/ims/ril/ImsRILAdapter;->mPhoneId:Ljava/lang/Integer;
+-
+-    invoke-virtual {v3}, Ljava/lang/Integer;->intValue()I
+-
+-    move-result v3
+-
+-    iget v4, v1, Lcom/mediatek/ims/ril/RILRequest;->mSerial:I
+-
+-    invoke-virtual {v2, v3, v4}, Lcom/android/internal/telephony/metrics/TelephonyMetrics;->writeRilAnswer(II)V
+     :try_end_0
+     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
+     .catch Ljava/lang/RuntimeException; {:try_start_0 .. :try_end_0} :catch_0
+@@ -17269,47 +17223,6 @@
+ 
+     .line 4403
+     :goto_0
+-    iget-object v14, v1, Lcom/mediatek/ims/ril/ImsRILAdapter;->mMetrics:Lcom/android/internal/telephony/metrics/TelephonyMetrics;
+-
+-    iget-object v5, v1, Lcom/mediatek/ims/ril/ImsRILAdapter;->mPhoneId:Ljava/lang/Integer;
+-
+-    invoke-virtual {v5}, Ljava/lang/Integer;->intValue()I
+-
+-    move-result v15
+-
+-    iget v5, v12, Lcom/mediatek/ims/ril/RILRequest;->mSerial:I
+-
+-    .line 4404
+-    invoke-virtual {v0, v2}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+-
+-    move-result v0
+-
+-    if-eqz v0, :cond_1
+-
+-    .line 4405
+-    move/from16 v18, v13
+-
+-    goto :goto_1
+-
+-    .line 4406
+-    :cond_1
+-    const/4 v0, 0x2
+-
+-    move/from16 v18, v0
+-
+-    :goto_1
+-    nop
+-
+-    .line 4403
+-    const/16 v17, 0x3
+-
+-    const-wide/16 v19, 0x0
+-
+-    move/from16 v16, v5
+-
+-    invoke-virtual/range {v14 .. v20}, Lcom/android/internal/telephony/metrics/TelephonyMetrics;->writeRilSendSms(IIIIJ)V
+-
+-    .line 4411
+     goto :goto_2
+ 
+     .line 4400
+diff --git a/smali/com/mediatek/wfo/ril/MwiRIL$RilHandler.smali b/smali/com/mediatek/wfo/ril/MwiRIL$RilHandler.smali
+index d918894..33c3fde 100644
+--- a/smali/com/mediatek/wfo/ril/MwiRIL$RilHandler.smali
++++ b/smali/com/mediatek/wfo/ril/MwiRIL$RilHandler.smali
+@@ -193,27 +193,6 @@
+ 
+     invoke-virtual {v1}, Landroid/os/Message;->sendToTarget()V
+ 
+-    .line 406
+-    iget-object v1, p0, Lcom/mediatek/wfo/ril/MwiRIL$RilHandler;->this$0:Lcom/mediatek/wfo/ril/MwiRIL;
+-
+-    invoke-static {v1}, Lcom/mediatek/wfo/ril/MwiRIL;->-$$Nest$fgetmMetrics(Lcom/mediatek/wfo/ril/MwiRIL;)Lcom/android/internal/telephony/metrics/TelephonyMetrics;
+-
+-    move-result-object v1
+-
+-    iget-object v4, p0, Lcom/mediatek/wfo/ril/MwiRIL$RilHandler;->this$0:Lcom/mediatek/wfo/ril/MwiRIL;
+-
+-    iget-object v4, v4, Lcom/mediatek/wfo/ril/MwiRIL;->mPhoneId:Ljava/lang/Integer;
+-
+-    invoke-virtual {v4}, Ljava/lang/Integer;->intValue()I
+-
+-    move-result v4
+-
+-    iget v5, v2, Lcom/mediatek/wfo/ril/RILRequest;->mSerial:I
+-
+-    iget v6, v2, Lcom/mediatek/wfo/ril/RILRequest;->mRequest:I
+-
+-    invoke-virtual {v1, v4, v5, v6}, Lcom/android/internal/telephony/metrics/TelephonyMetrics;->writeOnRilTimeoutResponse(III)V
+-
+     .line 409
+     .end local v3    # "timeoutResponse":Ljava/lang/Object;
+     :cond_1
+@@ -296,12 +275,8 @@
+ 
+     invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+ 
+-    move-result-object v3
+-
+     invoke-virtual {v3, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+ 
+-    move-result-object v3
+-
+     invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+ 
+     move-result-object v3
+diff --git a/smali/com/mediatek/wfo/ril/MwiRIL.smali b/smali/com/mediatek/wfo/ril/MwiRIL.smali
+index cbf1cc4..f753dff 100644
+--- a/smali/com/mediatek/wfo/ril/MwiRIL.smali
++++ b/smali/com/mediatek/wfo/ril/MwiRIL.smali
+@@ -83,8 +83,6 @@
+ 
+ .field mIsMobileNetworkSupported:Z
+ 
+-.field private mMetrics:Lcom/android/internal/telephony/metrics/TelephonyMetrics;
+-
+ .field final mPhoneId:Ljava/lang/Integer;
+ 
+ .field private mRILDefaultWorkSource:Landroid/os/WorkSource;
+@@ -129,14 +127,6 @@
+ 
+ 
+ # direct methods
+-.method static bridge synthetic -$$Nest$fgetmMetrics(Lcom/mediatek/wfo/ril/MwiRIL;)Lcom/android/internal/telephony/metrics/TelephonyMetrics;
+-    .locals 0
+-
+-    iget-object p0, p0, Lcom/mediatek/wfo/ril/MwiRIL;->mMetrics:Lcom/android/internal/telephony/metrics/TelephonyMetrics;
+-
+-    return-object p0
+-.end method
+-
+ .method static bridge synthetic -$$Nest$mclearWakeLock(Lcom/mediatek/wfo/ril/MwiRIL;I)Z
+     .locals 0
+ 
+@@ -267,13 +257,6 @@
+ 
+     iput-object v1, p0, Lcom/mediatek/wfo/ril/MwiRIL;->mTestingEmergencyCall:Ljava/util/concurrent/atomic/AtomicBoolean;
+ 
+-    .line 293
+-    invoke-static {}, Lcom/android/internal/telephony/metrics/TelephonyMetrics;->getInstance()Lcom/android/internal/telephony/metrics/TelephonyMetrics;
+-
+-    move-result-object v1
+-
+-    iput-object v1, p0, Lcom/mediatek/wfo/ril/MwiRIL;->mMetrics:Lcom/android/internal/telephony/metrics/TelephonyMetrics;
+-
+     .line 305
+     const/4 v1, 0x0
+ 
+@@ -3458,23 +3441,6 @@
+ 
+     .line 1146
+     :goto_0
+-    iget-object v1, p0, Lcom/mediatek/wfo/ril/MwiRIL;->mMetrics:Lcom/android/internal/telephony/metrics/TelephonyMetrics;
+-
+-    iget-object v0, p0, Lcom/mediatek/wfo/ril/MwiRIL;->mPhoneId:Ljava/lang/Integer;
+-
+-    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
+-
+-    move-result v2
+-
+-    iget v3, p1, Lcom/mediatek/wfo/ril/RILRequest;->mSerial:I
+-
+-    iget v4, p2, Landroid/hardware/radio/V1_0/RadioResponseInfo;->error:I
+-
+-    iget v5, p1, Lcom/mediatek/wfo/ril/RILRequest;->mRequest:I
+-
+-    move-object v6, p3
+-
+-    invoke-virtual/range {v1 .. v6}, Lcom/android/internal/telephony/metrics/TelephonyMetrics;->writeOnRilSolicitedResponse(IIIILjava/lang/Object;)V
+ 
+     .line 1148
+     if-eqz p1, :cond_2

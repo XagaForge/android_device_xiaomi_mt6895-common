@@ -1,0 +1,93 @@
+diff --git a/smali/com/mediatek/gbaservice/ril/GbaRIL$RilHandler.smali b/smali/com/mediatek/gbaservice/ril/GbaRIL$RilHandler.smali
+index b6a7888..ad12276 100644
+--- a/smali/com/mediatek/gbaservice/ril/GbaRIL$RilHandler.smali
++++ b/smali/com/mediatek/gbaservice/ril/GbaRIL$RilHandler.smali
+@@ -154,23 +154,6 @@
+ 
+     invoke-virtual {v0}, Landroid/os/Message;->sendToTarget()V
+ 
+-    .line 357
+-    iget-object v0, p0, Lcom/mediatek/gbaservice/ril/GbaRIL$RilHandler;->this$0:Lcom/mediatek/gbaservice/ril/GbaRIL;
+-
+-    invoke-static {v0}, Lcom/mediatek/gbaservice/ril/GbaRIL;->-$$Nest$fgetmMetrics(Lcom/mediatek/gbaservice/ril/GbaRIL;)Lcom/android/internal/telephony/metrics/TelephonyMetrics;
+-
+-    move-result-object v0
+-
+-    iget-object v1, p0, Lcom/mediatek/gbaservice/ril/GbaRIL$RilHandler;->this$0:Lcom/mediatek/gbaservice/ril/GbaRIL;
+-
+-    iget v1, v1, Lcom/mediatek/gbaservice/ril/GbaBaseCommands;->mPhoneId:I
+-
+-    iget v2, p1, Lcom/mediatek/gbaservice/ril/RILRequest;->mSerial:I
+-
+-    iget v3, p1, Lcom/mediatek/gbaservice/ril/RILRequest;->mRequest:I
+-
+-    invoke-virtual {v0, v1, v2, v3}, Lcom/android/internal/telephony/metrics/TelephonyMetrics;->writeOnRilTimeoutResponse(III)V
+-
+     .line 359
+     :cond_3
+     iget-object p0, p0, Lcom/mediatek/gbaservice/ril/GbaRIL$RilHandler;->this$0:Lcom/mediatek/gbaservice/ril/GbaRIL;
+diff --git a/smali/com/mediatek/gbaservice/ril/GbaRIL.smali b/smali/com/mediatek/gbaservice/ril/GbaRIL.smali
+index da7b8b4..d3fd10e 100644
+--- a/smali/com/mediatek/gbaservice/ril/GbaRIL.smali
++++ b/smali/com/mediatek/gbaservice/ril/GbaRIL.smali
+@@ -20,8 +20,6 @@
+ 
+ .field private final mClientWakelockTracker:Lcom/android/internal/telephony/ClientWakelockTracker;
+ 
+-.field private mMetrics:Lcom/android/internal/telephony/metrics/TelephonyMetrics;
+-
+ .field volatile mMtkRadioExModemProxy:Lvendor/mediatek/hardware/mtkradioex/modem/IMtkRadioExModem;
+ 
+ .field final mMtkRadioExModemProxyDeathRecipient:Lcom/mediatek/gbaservice/ril/GbaRIL$MtkRadioExModemProxyDeathRecipient;
+@@ -75,15 +73,6 @@
+     return-void
+ .end method
+ 
+-.method static bridge synthetic -$$Nest$fgetmMetrics(Lcom/mediatek/gbaservice/ril/GbaRIL;)Lcom/android/internal/telephony/metrics/TelephonyMetrics;
+-    .locals 0
+-
+-    .line 0
+-    iget-object p0, p0, Lcom/mediatek/gbaservice/ril/GbaRIL;->mMetrics:Lcom/android/internal/telephony/metrics/TelephonyMetrics;
+-
+-    return-object p0
+-.end method
+-
+ .method static bridge synthetic -$$Nest$mclearWakeLock(Lcom/mediatek/gbaservice/ril/GbaRIL;I)Z
+     .locals 0
+ 
+@@ -200,15 +189,6 @@
+ 
+     iput-object v1, p0, Lcom/mediatek/gbaservice/ril/GbaRIL;->mRequestList:Landroid/util/SparseArray;
+ 
+-    .line 265
+-    invoke-static {}, Lcom/android/internal/telephony/metrics/TelephonyMetrics;->getInstance()Lcom/android/internal/telephony/metrics/TelephonyMetrics;
+-
+-    move-result-object v1
+-
+-    iput-object v1, p0, Lcom/mediatek/gbaservice/ril/GbaRIL;->mMetrics:Lcom/android/internal/telephony/metrics/TelephonyMetrics;
+-
+-    const/4 v1, 0x0
+-
+     .line 269
+     iput-object v1, p0, Lcom/mediatek/gbaservice/ril/GbaRIL;->mMtkRadioExModemProxy:Lvendor/mediatek/hardware/mtkradioex/modem/IMtkRadioExModem;
+ 
+@@ -2307,19 +2287,6 @@
+ 
+     .line 709
+     :goto_0
+-    iget-object v1, p0, Lcom/mediatek/gbaservice/ril/GbaRIL;->mMetrics:Lcom/android/internal/telephony/metrics/TelephonyMetrics;
+-
+-    iget v2, p0, Lcom/mediatek/gbaservice/ril/GbaBaseCommands;->mPhoneId:I
+-
+-    iget v3, p1, Lcom/mediatek/gbaservice/ril/RILRequest;->mSerial:I
+-
+-    iget v4, p2, Landroid/hardware/radio/RadioResponseInfo;->error:I
+-
+-    iget v5, p1, Lcom/mediatek/gbaservice/ril/RILRequest;->mRequest:I
+-
+-    move-object v6, p3
+-
+-    invoke-virtual/range {v1 .. v6}, Lcom/android/internal/telephony/metrics/TelephonyMetrics;->writeOnRilSolicitedResponse(IIIILjava/lang/Object;)V
+ 
+     .line 711
+     iget p2, p2, Landroid/hardware/radio/RadioResponseInfo;->type:I
