@@ -64,9 +64,6 @@
     <!-- Wifi driver supports WPA3 Simultaneous Authentication of Equals (WPA3-SAE) for softap -->
     <bool translatable="false" name="config_wifi_softap_sae_supported">true</bool>
 
-    <!-- Indicates that bridged AP mode is supported on this device -->
-    <bool translatable="false" name="config_wifiBridgedSoftApSupported">true</bool>
-
     <!-- Enable Make-Before-Break Wifi network switching.
          Note: this is conditional on the device supporting dual concurrent STAs. -->
     <bool translatable="false" name="config_wifiMultiStaNetworkSwitchingMakeBeforeBreakEnabled">true</bool>
