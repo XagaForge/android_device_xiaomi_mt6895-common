@@ -427,7 +427,7 @@ system_ext/lib64/libmvpuop25_mtk_nn.mtk.so
 system_ext/lib64/libmvpuop_mtk_cv.mtk.so
 system_ext/lib64/libmvpuop_mtk_nn.mtk.so
 system_ext/lib64/libneuron_graph_delegate.mtk.so
-system_ext/lib64/libneuronusdk_adapter.mtk.so
+system_ext/lib64/libneuronusdk_adapter.mtk.so;FIX_SONAME
 system_ext/lib64/libnir_neon_driver_ndk.mtk.so
 system_ext/lib64/libtflite_mtk.mtk.so
 system_ext/lib64/vendor.mediatek.hardware.apuware.apusys-V5-ndk.so
