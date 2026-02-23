@@ -18,6 +18,9 @@ bluetooth.profile.sap.server.enabled?=true
 # Camera
 ro.camerax.extensions.enabled=true
 
+# F2FS
+persist.fsck.disable_linear_lookup=on
+
 # FUSE passthrough
 persist.sys.fuse.passthrough.enable=true
 
