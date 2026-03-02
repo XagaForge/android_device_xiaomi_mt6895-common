@@ -125,6 +125,12 @@
                 </mixPort>
                 <mixPort name="hifi_playback" role="source"/>
                 <mixPort name="hifi_input" role="sink"/>
+                <!--Spatial Audio-->
+                <mixPort name="immersive_out" role="source" flags="AUDIO_OUTPUT_FLAG_SPATIALIZER">
+                    <profile name="" format="AUDIO_FORMAT_PCM_FLOAT"
+                             samplingRates="48000" channelMasks="AUDIO_CHANNEL_OUT_STEREO"/>
+                <!--Spatial Audio-->
+                </mixPort>
             </mixPorts>
             <devicePorts>
                 <!-- Output devices declaration  i.e. Sink DEVICE PORT -->
@@ -256,13 +262,13 @@
                 <route type="mix" sink="Earpiece"
                        sources="primary output,deep_buffer,voip_rx,mmap_no_irq_out,fast,Voice Call In"/>
                 <route type="mix" sink="Speaker"
-                       sources="primary output,deep_buffer,mmap_no_irq_out,fast,FM Tuner In,voip_rx,Voice Call In"/>
+                       sources="primary output,deep_buffer,mmap_no_irq_out,fast,FM Tuner In,voip_rx,Voice Call In,immersive_out"/>
                 <route type="mix" sink="Wired Headset"
-                       sources="primary output,deep_buffer,mmap_no_irq_out,fast,FM Tuner In,voip_rx,Voice Call In"/>
+                       sources="primary output,deep_buffer,mmap_no_irq_out,fast,FM Tuner In,voip_rx,Voice Call In,immersive_out"/>
                 <route type="mix" sink="Wired Headphones"
-                       sources="primary output,deep_buffer,mmap_no_irq_out,fast,FM Tuner In,voip_rx,Voice Call In"/>
+                       sources="primary output,deep_buffer,mmap_no_irq_out,fast,FM Tuner In,voip_rx,Voice Call In,immersive_out"/>
                 <route type="mix" sink="USB Device Out"
-                       sources="primary output,deep_buffer,fast,FM Tuner In,voip_rx,Voice Call In,hifi_playback"/>
+                       sources="primary output,deep_buffer,fast,FM Tuner In,voip_rx,Voice Call In,hifi_playback,immersive_out"/>
                 <route type="mix" sink="USB Headset Out"
                        sources="primary output,deep_buffer,fast,FM Tuner In,voip_rx,Voice Call In,hifi_playback"/>
                 <route type="mix" sink="BT SCO"
