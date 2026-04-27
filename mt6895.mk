@@ -180,6 +180,7 @@ PRODUCT_COPY_FILES += \
 # Overlays
 PRODUCT_PACKAGES += \
     FrameworksResOverlayMT6895 \
+    NetworkStackOverlayMT6895 \
     PowerOffAlarmOverlayMT6895 \
     TelephonyOverlayMT6895 \
     Launcher3QuickStepOverlayMT6895 \
