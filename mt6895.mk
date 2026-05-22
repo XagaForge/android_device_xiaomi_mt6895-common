@@ -76,8 +76,8 @@ TARGET_EXCLUDES_AUDIOFX := true
 
 # Boot Control
 PRODUCT_PACKAGES += \
-    com.android.hardware.boot \
-    android.hardware.boot-service.default_recovery
+    android.hardware.boot-service.mediatek \
+    android.hardware.boot-service.mediatek_recovery
 
 # Bluetooth
 PRODUCT_PACKAGES += \
