@@ -19,5 +19,16 @@ android_app {
 
     static_libs: [
         "org.lineageos.settings.resources",
+        "androidx.activity_activity-compose",
+        "androidx.compose.foundation_foundation",
+        "androidx.compose.material3_material3",
+        "androidx.compose.material_material-icons-extended",
+        "androidx.compose.runtime_runtime",
+        "androidx.compose.ui_ui",
+        "androidx.lifecycle_lifecycle-runtime-ktx",
+    ],
+
+    kotlincflags: [
+        "-Xjvm-default=all",
     ],
 }
