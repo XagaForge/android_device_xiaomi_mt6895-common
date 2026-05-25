@@ -23,6 +23,10 @@
     <string name="thermal_title">Thermal profiles</string>
     <string name="thermal_enable">Use thermal profiles</string>
     <string name="thermal_summary">Per-app thermal profile configuration</string>
+    <string name="thermal_switch_summary">Apply thermal profiles automatically for selected apps</string>
+    <string name="thermal_search_hint">Search apps</string>
+    <string name="thermal_no_apps">No apps found</string>
+    <string name="thermal_no_search_results">No apps match \"%1$s\"</string>
     <string name="thermal_loading">Loading...</string>
     <string name="thermal_default">Default</string>
     <string name="thermal_benchmark">Benchmark</string>
