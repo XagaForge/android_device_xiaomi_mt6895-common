@@ -149,10 +149,9 @@
         <transport>hwbinder</transport>
         <fqname>@2.15::IPictureQuality/default</fqname>
     </hal>
-    <hal format="hidl">
+    <hal format="aidl">
         <name>vendor.mediatek.hardware.videotelephony</name>
-        <transport>hwbinder</transport>
-        <fqname>@1.0::IVideoTelephony/default</fqname>
+        <fqname>IVideoTelephony/default</fqname>
     </hal>
     <hal format="hidl">
         <name>vendor.xiaomi.hardware.mfidoca</name>

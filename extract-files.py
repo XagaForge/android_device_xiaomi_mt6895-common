@@ -37,7 +37,7 @@ lib_fixups: lib_fixups_user_type = {
         'vendor.mediatek.hardware.apuware.apusys@2.1',
         'vendor.mediatek.hardware.apuware.hmp@1.0',
         'vendor.mediatek.hardware.apuware.utils@2.0',
-        'vendor.mediatek.hardware.videotelephony@1.0',
+        'vendor.mediatek.hardware.videotelephony-V1-ndk',
     ): lib_fixup_vendor_suffix,
 }
 
