@@ -142,10 +142,12 @@ vendor/etc/audio_param/Volume_ParamUnitDesc.xml
 # Bluetooth
 vendor/etc/init/init.bt_drv.rc
 vendor/firmware/BT_FW.cfg
-vendor/firmware/soc7_0_ram_bt_1b_t_1_hdr.bin
 vendor/lib64/libbluetooth_mtk.so
 vendor/lib64/libbluetooth_mtk_pure.so
 vendor/lib64/libbt-vendor.so
+
+# Bluetooth (Firmware) - from aristotle
+vendor/firmware/soc7_0_ram_bt_1b_t_1_hdr.bin|629f5d0f3be59efeb1d13d4a8c48badd1b0ec219
 
 # Bluetooth (A2DP)
 vendor/lib64/vendor.mediatek.hardware.bluetooth.audio@2.1.so
@@ -159,7 +161,9 @@ vendor/bin/conninfra_loader
 vendor/etc/init/init.connfem.rc
 vendor/etc/init/init.conninfra.rc
 vendor/firmware/conninfra.cfg
-vendor/firmware/soc7_0_ram_mcu_1b_t_1_hdr.bin
+
+# Connectivity (Firmware) - from aristotle
+vendor/firmware/soc7_0_ram_mcu_1b_t_1_hdr.bin|b33fa0d812d4371192c632243902f94ac7bba060
 
 # ConsumerIR
 vendor/lib64/hw/consumerir.common.so
@@ -631,6 +635,8 @@ vendor/bin/wlan_assistant
 vendor/etc/init/init.wlan_drv.rc
 vendor/etc/init/wlan_assistant.rc
 vendor/etc/wifi/passpointProfile.conf
-vendor/firmware/WIFI_RAM_CODE_soc7_0_1b_t_1.bin
-vendor/firmware/soc7_0_ram_wmmcu_1b_t_1_hdr.bin
 vendor/lib64/libwifi-hal.so:vendor/lib64/libwifi-hal-mtk.so;FIX_SONAME
+
+# Wi-Fi (Firmware) - from aristotle
+vendor/firmware/WIFI_RAM_CODE_soc7_0_1b_t_1.bin|4cb80cfbc438ac95c626390d13406d7ea7652358
+vendor/firmware/soc7_0_ram_wmmcu_1b_t_1_hdr.bin|f27973e33666f00d1c40cf314169d952e1f07dda
