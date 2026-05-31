@@ -1,6 +1,6 @@
 # Unpinned blobs from plato-user 15 SP1A.210812.016 OS2.0.214.0.VLQMIXM release-keys
+# aristotle: aristotle_id_global-user 16 BP2A.250605.031.A3 OS3.0.1.0.WMFIDXM release-keys
 # duchamp: duchamp_global-user 15 UP1A.230905.011 OS2.0.100.0.VNLMIXM release-keys
-# rothko: rothko_global_user 16 BP2A.250605.015 OS2.0.215.0.WNNMIXM release-keys
 # plato V14.0.7.0.ULQMIXM: plato-user 14 SP1A.210812.016 V14.0.7.0.ULQMIXM release-keys
 
 # Audio
@@ -299,38 +299,36 @@ vendor/lib64/mt6895/libmnl.so;SYMLINK=vendor/lib64/libmnl.so
 vendor/lib64/librpc.so
 vendor/lib64/libviagpsrpc.so
 
-# IMS (system) - from rothko
+# IMS - from aristotle
 system_ext/bin/vtservice|4a8759f67cc4f238983c57193d88d1cc13956e06
 system_ext/etc/init/init.vtservice.rc|50a2249906edc06059b443513db47a2ddc0490dc|d1bad63ed1e5dc8cbf02c5ec37022a7753330729
+system_ext/framework/mediatek-ims-base.jar:system/framework/mediatek-ims-base.jar;BOOT_JAR|379037af7466fd3a25afd95cedecdfe005afe839
+system_ext/framework/mediatek-ims-common.jar:system/framework/mediatek-ims-common.jar;BOOT_JAR|055c104850308d836ac72f0f12149e27364070f9
+system_ext/framework/mediatek-ims-extension-plugin.jar|a355792e0ad157f927df2a3f9a36c0196e828cd6
+system_ext/framework/mediatek-telecom-common.jar:system/framework/mediatek-telecom-common.jar;BOOT_JAR|c14380acb9467b998423c3155c5beb375df6d877
+system_ext/framework/mediatek-telephony-base.jar:system/framework/mediatek-telephony-base.jar;BOOT_JAR|550bf80fb247b1809da7d53c5e586e64564e7cd2
+system_ext/framework/mediatek-telephony-common.jar:system/framework/mediatek-telephony-common.jar;BOOT_JAR|170542c916f6ad8e6ea6e4cdec76b714fcb35b8c
 system_ext/lib64/libcomutils.so|05cdfb5eb128b670ec182235e75efeec2dd21773
-system_ext/lib64/libimsma.so|ef84a4ebd120834a1514197af96101e81839cd12|1b581eee25e72f399b7d6ebb11595f7cee03a8f8
-system_ext/lib64/libimsma_adapt.so|de3b5546ff7a5dc9f7ba3db3f06b53498600490d
-system_ext/lib64/libimsma_rtp.so|1291ec8904cebd796da60244a14f2dff791fe96f
+system_ext/lib64/libimsma.so|ecc97c137cd7ef1427a64155ddaf8901db1378a9|cf108c7c9658041aa93c89b4ea2cee96901a2b85
+system_ext/lib64/libimsma_adapt.so|2d19ab68fa39b9f4eb24be744ae18ca98f70b767
+system_ext/lib64/libimsma_rtp.so|c48cf35f2cf73e92841fe39d2e0c7d816b505ad0
 system_ext/lib64/libimsma_socketwrapper.so|aaa678a3fe154066bd47c9ed67105a7b941b7cf9
-system_ext/lib64/libmtk_vt_service.so|a1ba6d03b7ba0584885f252f1faf5d980659eac0
-system_ext/lib64/libmtk_vt_wrapper.so|9b62da09fbf2b89270a7734511f1d6fe76aa7e63
+system_ext/lib64/libmtk_vt_service.so|ce17fe8d78fec13ddbfa8e6bbcb9a25366026c1b
+system_ext/lib64/libmtk_vt_wrapper.so|a06c3ee31bc95393e1ee8f682698ba64e09bcad0
 system_ext/lib64/libsignal.so|38ab61c18cedce065ff16cbc71dbdf15681538f3
-system_ext/lib64/libsink.so:system_ext/lib64/libsink-mtk.so;FIX_SONAME|ff807e93274637dc2c183680cd1df540a18a9df8|08df824f92bd139a6711b6b5ae3fcbd550244b99
-system_ext/lib64/libsource.so|06d0948067791d30befd3d84adb196287b9bcc18
-system_ext/lib64/libvcodec_cap.so|a49da521496c7778b756654f7251657a8f04cc4f
-system_ext/lib64/libvcodec_capenc.so|5274c56e4c07a21cf3ff3b9678231a6d9c3ffe7c
+system_ext/lib64/libsink.so:system_ext/lib64/libsink-mtk.so;FIX_SONAME|6ffa9c82ee71ce06b71e43d5c9b0bf0a9794ccf7|cd2ba9081f3d72f65a2ab5bfe3f9fbd15f2edcf0
+system_ext/lib64/libsource.so|6e3a9c7bde97aa6e8739caa50b6d828591cd1d98
+system_ext/lib64/libvcodec_cap.so|57490ed96a72df49fdf7204e2c0db03aa12b439e
+system_ext/lib64/libvcodec_capenc.so|013f0131a424f8c2fc3815b02e466bc03a197324
 system_ext/lib64/libvt_avsync.so|548242bff6b4472f212bf18cdec7753088885a10
 system_ext/lib64/vendor.mediatek.hardware.videotelephony-V1-ndk.so|8b13966bdf703d2eae99d4f65a2e77fbd939064c
 system_ext/lib64/vendor.mediatek.hardware.videotelephony@1.0.so|01b68c7597d585ec39441628f66b02b3b091db99
-
-# IMS
-system_ext/framework/mediatek-ims-base.jar:system/framework/mediatek-ims-base.jar;BOOT_JAR
-system_ext/framework/mediatek-ims-common.jar:system/framework/mediatek-ims-common.jar;BOOT_JAR
-system_ext/framework/mediatek-ims-extension-plugin.jar:system/framework/mediatek-ims-extension-plugin.jar
-system_ext/framework/mediatek-telecom-common.jar:system/framework/mediatek-telecom-common.jar;BOOT_JAR
-system_ext/framework/mediatek-telephony-base.jar:system/framework/mediatek-telephony-base.jar;BOOT_JAR
-system_ext/framework/mediatek-telephony-common.jar:system/framework/mediatek-telephony-common.jar;BOOT_JAR
-system_ext/priv-app/ImsService/ImsService.apk
-system_ext/priv-app/MtkGbaService/MtkGbaService.apk
-vendor/bin/hw/vtservice_hidl
-vendor/etc/init/init.vtservice_hidl.rc
-vendor/lib64/hw/vendor.mediatek.hardware.videotelephony@1.0-impl.so
-vendor/lib64/vendor.mediatek.hardware.videotelephony@1.0.so;MODULE_SUFFIX=_vendor
+system_ext/priv-app/ImsService/ImsService.apk|183dcf4602753cc25907bc838978b7bffc011486|e9194834f8785b03b008df091dba74f6024cfac9
+system_ext/priv-app/MtkGbaService/MtkGbaService.apk|48746323e3f349dda983a3949cc8ff551f654060
+vendor/bin/hw/vtservice_aidl|fc5840b2ebf5a12db5743b8fc39d88f97fe3a00d
+vendor/etc/init/init.vtservice_aidl.rc|b213670f1233b2bb585adde523e37856c2750705
+vendor/lib64/hw/vendor.mediatek.hardware.videotelephony-impl.so|038f140ace3f6916165b9f6b4c4aa31b55bc3e65
+vendor/lib64/vendor.mediatek.hardware.videotelephony-V1-ndk.so;MODULE_SUFFIX=_vendor|acc752c8dbcc6622c820bdf53abfe9b4efff1ccf
 
 # Keymint
 vendor/bin/hw/android.hardware.security.keymint@1.0-service.beanpod;DISABLE_DEPS
