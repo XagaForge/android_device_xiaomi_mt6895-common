@@ -226,6 +226,11 @@ ro.hardware.kmsetkey=beanpod
 ro.hardware.gatekeeper=beanpod
 ro.vendor.mtk_microtrust_tee_support=1
 
+# USB
+vendor.usb.vid=0x2717
+vendor.usb.pid=0xFF08
+vendor.usb.controller=11201000.usb0
+
 # UVC
 ro.usb.uvc.enabled=true
 
