@@ -207,6 +207,7 @@ PRODUCT_OTHER_JAVA_DEBUG_INFO := false
 
 # Rootdir
 PRODUCT_PACKAGES += \
+    chipinfo \
     fstab.mt6895 \
     fstab.mt6895.vendor_ramdisk \
     fstab.zram \
