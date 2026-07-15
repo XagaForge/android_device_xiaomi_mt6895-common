@@ -331,6 +331,8 @@ $(call soong_config_set, vibrator, vibratortargets, vibratoraidlV2target)
 $(call inherit-product, vendor/qcom/opensource/vibrator/vibrator-vendor-product.mk)
 
 # Wi-Fi
+$(call soong_config_set_bool,mediatek_wifi_hal,use_pre_u_qpr2_struct,true)
+
 PRODUCT_PACKAGES += \
     wpa_supplicant \
     hostapd \
