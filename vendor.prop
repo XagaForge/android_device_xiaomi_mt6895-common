@@ -84,6 +84,7 @@ ro.vendor.smvr.p2batch.vga=32
 ro.vendor.smvr.p2batch.hd=16
 ro.vendor.smvr.p2batch.fhd=8
 persist.vendor.sys.mtkaal.function=0
+debug.renderengine.backend=skiaglthreaded
 
 # DRM
 ro.netflix.bsp_rev=MTK6895-35027-1
