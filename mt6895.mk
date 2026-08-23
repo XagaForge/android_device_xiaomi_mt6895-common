@@ -351,7 +351,8 @@ PRODUCT_PACKAGES += \
     wpa_supplicant \
     hostapd \
     libwifi-hal-wrapper \
-    android.hardware.wifi-service
+    android.hardware.wifi-service \
+    wlan_assistant
 
 PRODUCT_PACKAGES += \
     NcmTetheringOverlay
