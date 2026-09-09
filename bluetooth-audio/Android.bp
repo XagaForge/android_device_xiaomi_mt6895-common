@@ -3,6 +3,12 @@
 // SPDX-License-Identifier: Apache-2.0
 //
 
+soong_namespace {
+    imports: [
+        "hardware/mediatek",
+    ],
+}
+
 cc_library_shared {
     name: "android.hardware.bluetooth.audio@2.1-impl-mediatek",
     defaults: ["hidl_defaults"],
@@ -21,6 +27,8 @@ cc_library_shared {
     shared_libs: [
         "android.hardware.bluetooth.audio@2.0",
         "android.hardware.bluetooth.audio@2.1",
+        "vendor.mediatek.hardware.bluetooth.audio@2.1",
+        "vendor.mediatek.hardware.bluetooth.audio@2.2",
         "libbase",
         "libbluetooth_audio_session",
         "libcutils",
