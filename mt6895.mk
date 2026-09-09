@@ -46,7 +46,7 @@ PRODUCT_PACKAGES += \
     audio.bluetooth.default \
     audio.r_submix.default \
     audio.usb.default \
-    android.hardware.bluetooth.audio-impl
+    android.hardware.bluetooth.audio@2.1-impl-mediatek
 
 PRODUCT_PACKAGES += \
     MtkInCallService
