@@ -222,9 +222,13 @@ private fun ThermalScreen(
                     items(items = filtered, key = { it.packageName }) { entry ->
                         AppRow(
                             entry = entry,
-                            initialState = thermalUtils.getStateForPackage(entry.packageName),
+                            initialState = thermalUtils.getOverrideForPackage(entry.packageName),
                             onSelect = { state ->
-                                thermalUtils.writePackage(entry.packageName, state.id)
+                                if (state == null) {
+                                    thermalUtils.resetPackage(entry.packageName)
+                                } else {
+                                    thermalUtils.writePackage(entry.packageName, state.id)
+                                }
                             },
                         )
                     }
@@ -392,14 +396,14 @@ private fun EmptyView(query: String, hasApps: Boolean) {
 @Composable
 private fun AppRow(
     entry: AppEntry,
-    initialState: ThermalState,
-    onSelect: (ThermalState) -> Unit,
+    initialState: ThermalState?,
+    onSelect: (ThermalState?) -> Unit,
 ) {
     var state by remember(entry.packageName) { mutableStateOf(initialState) }
     var menuOpen by remember { mutableStateOf(false) }
     val profileDescription = stringResource(
         R.string.thermal_profile_accessibility,
-        stringResource(state.label),
+        stringResource(state?.label ?: R.string.thermal_automatic),
         entry.label,
     )
 
@@ -449,7 +453,7 @@ private fun AppRow(
                     modifier = Modifier.semantics { contentDescription = profileDescription },
                 ) {
                     Text(
-                        text = stringResource(state.label),
+                        text = stringResource(state?.label ?: R.string.thermal_automatic),
                         style = MaterialTheme.typography.labelLarge,
                     )
                     Icon(
@@ -462,10 +466,12 @@ private fun AppRow(
                     expanded = menuOpen,
                     onDismissRequest = { menuOpen = false },
                 ) {
-                    ThermalState.values().forEach { item ->
+                    (listOf<ThermalState?>(null) + ThermalState.values()).forEach { item ->
                         val selected = item == state
                         DropdownMenuItem(
-                            text = { Text(stringResource(item.label)) },
+                            text = {
+                                Text(stringResource(item?.label ?: R.string.thermal_automatic))
+                            },
                             trailingIcon = if (selected) {
                                 { Icon(Icons.Rounded.Check, contentDescription = null) }
                             } else {

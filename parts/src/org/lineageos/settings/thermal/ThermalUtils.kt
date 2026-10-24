@@ -69,17 +69,33 @@ private constructor(
 
     fun writePackage(packageName: String, mode: Int) {
         dlog(TAG, "writePackage: $packageName -> $mode")
-        var newValue = value.replace("$packageName,", "")
-        val modes = newValue.split(":").toMutableList()
-        modes[mode] += "$packageName,"
-        value = modes.joinToString(":")
+        updatePackage(packageName, ThermalState.values().first { it.id == mode })
     }
 
-    fun getStateForPackage(packageName: String): ThermalState {
-        val modes = value.split(":")
-        return ThermalState.values().find { state -> modes[state.id].contains("$packageName,") }
-            ?: getDefaultStateForPackage(packageName)
+    fun resetPackage(packageName: String) {
+        dlog(TAG, "resetPackage: $packageName")
+        updatePackage(packageName, null)
     }
+
+    private fun updatePackage(packageName: String, state: ThermalState?) {
+        value = ThermalState.values().joinToString(":") { mode ->
+            val packages = getPackagesForState(mode).filter { it != packageName }.toMutableList()
+            if (mode == state) packages.add(packageName)
+            mode.prefix + packages.joinToString(separator = "") { "$it," }
+        }
+    }
+
+    private fun getPackagesForState(state: ThermalState): List<String> {
+        val mode = value.split(":").getOrNull(state.id) ?: return emptyList()
+        if (!mode.startsWith(state.prefix)) return emptyList()
+        return mode.removePrefix(state.prefix).split(",").filter { it.isNotEmpty() }
+    }
+
+    fun getOverrideForPackage(packageName: String): ThermalState? =
+        ThermalState.values().find { packageName in getPackagesForState(it) }
+
+    fun getStateForPackage(packageName: String): ThermalState =
+        getOverrideForPackage(packageName) ?: getDefaultStateForPackage(packageName)
 
     fun resetProfiles() {
         dlog(TAG, "resetProfiles")
