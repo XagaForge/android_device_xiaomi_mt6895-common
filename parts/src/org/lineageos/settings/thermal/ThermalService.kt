@@ -13,7 +13,11 @@ import android.content.BroadcastReceiver
 import android.content.Context
 import android.content.Intent
 import android.content.IntentFilter
+import android.os.Handler
 import android.os.IBinder
+import android.os.Looper
+import android.os.PowerManager
+import android.util.Log
 import org.lineageos.settings.utils.dlog
 
 /** Service to monitor current top (foreground) app and set thermal profile accordingly. */
@@ -21,29 +25,14 @@ class ThermalService : Service() {
 
     private lateinit var thermalUtils: ThermalUtils
 
-    private var currentApp = ""
-        set(value) {
-            if (field == value) return
-            field = value
-            dlog(TAG, "Top app changed: $value")
-            setThermalProfile()
-        }
-
-    private var screenOn = true
-        set(value) {
-            if (field == value) return
-            field = value
-            dlog(TAG, "Screen state changed: $value")
-            setThermalProfile()
-        }
+    private val mainHandler = Handler(Looper.getMainLooper())
+    private var currentApp: String? = null
+    private var destroyed = false
 
     private val taskListener =
         object : TaskStackListener() {
             override fun onTaskStackChanged() {
-                runCatching {
-                    val focusedTask = ActivityTaskManager.getService().focusedRootTaskInfo
-                    focusedTask?.topActivity?.let { currentApp = it.packageName }
-                }
+                mainHandler.post { updateThermalProfile() }
             }
         }
 
@@ -51,27 +40,17 @@ class ThermalService : Service() {
         object : BroadcastReceiver() {
             override fun onReceive(context: Context, intent: Intent) {
                 when (intent.action) {
-                    Intent.ACTION_SCREEN_OFF -> screenOn = false
-                    Intent.ACTION_SCREEN_ON -> screenOn = true
+                    Intent.ACTION_SCREEN_OFF, Intent.ACTION_SCREEN_ON -> updateThermalProfile()
                 }
             }
         }
 
     override fun onCreate() {
+        super.onCreate()
         dlog(TAG, "Creating service")
         thermalUtils = ThermalUtils.getInstance(this)
-        super.onCreate()
-    }
-
-    override fun onDestroy() {
-        dlog(TAG, "Destroying service")
-        unregisterReceiver(intentReceiver)
-        runCatching { ActivityTaskManager.getService().unregisterTaskStackListener(taskListener) }
-    }
-
-    override fun onStartCommand(intent: Intent?, flags: Int, startId: Int): Int {
-        dlog(TAG, "Starting service")
         runCatching { ActivityTaskManager.getService().registerTaskStackListener(taskListener) }
+            .onFailure { Log.e(TAG, "Could not register task stack listener", it) }
         registerReceiver(
             intentReceiver,
             IntentFilter().apply {
@@ -79,17 +58,50 @@ class ThermalService : Service() {
                 addAction(Intent.ACTION_SCREEN_ON)
             },
         )
+    }
+
+    override fun onDestroy() {
+        dlog(TAG, "Destroying service")
+        destroyed = true
+        unregisterReceiver(intentReceiver)
+        runCatching { ActivityTaskManager.getService().unregisterTaskStackListener(taskListener) }
+            .onFailure { Log.e(TAG, "Could not unregister task stack listener", it) }
+        mainHandler.removeCallbacksAndMessages(null)
+        super.onDestroy()
+    }
+
+    override fun onStartCommand(intent: Intent?, flags: Int, startId: Int): Int {
+        dlog(TAG, "Starting service")
+        if (!thermalUtils.enabled) {
+            stopSelf(startId)
+            return START_NOT_STICKY
+        }
+        updateThermalProfile(force = true)
         return START_STICKY
     }
 
     override fun onBind(intent: Intent?): IBinder? = null
 
-    private fun setThermalProfile() {
-        if (screenOn) {
-            thermalUtils.setThermalProfile(currentApp)
+    private fun updateThermalProfile(force: Boolean = false) {
+        if (destroyed || !thermalUtils.enabled) return
+
+        val packageName = if (getSystemService(PowerManager::class.java).isInteractive) {
+            runCatching {
+                ActivityTaskManager.getService().focusedRootTaskInfo?.topActivity?.packageName
+            }.onFailure {
+                Log.e(TAG, "Could not get foreground app", it)
+            }.getOrElse { return }.orEmpty()
         } else {
-            thermalUtils.setDefaultThermalProfile()
+            ""
         }
+        if (!force && packageName == currentApp) return
+
+        val applied = if (packageName.isEmpty()) {
+            thermalUtils.setDefaultThermalProfile()
+        } else {
+            thermalUtils.setThermalProfile(packageName)
+        }
+        currentApp = if (applied) packageName else null
     }
 
     companion object {

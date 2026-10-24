@@ -46,6 +46,7 @@ private constructor(
             if (field == value) return
             field = value
             writeValue(value)
+            startService()
         }
 
     fun startService() {
@@ -102,19 +103,19 @@ private constructor(
         value = DEFAULT_VALUE
     }
 
-    fun setDefaultThermalProfile() {
+    fun setDefaultThermalProfile(): Boolean {
         dlog(TAG, "setDefaultThermalProfile")
-        writeLine(THERMAL_SCONFIG, THERMAL_STATE_OFF)
+        return writeLine(THERMAL_SCONFIG, THERMAL_STATE_OFF)
     }
 
-    fun setThermalProfile(packageName: String) {
+    fun setThermalProfile(packageName: String): Boolean {
         if (packageName.isEmpty()) {
             dlog(TAG, "setThermalProfile: packageName is empty")
-            return
+            return false
         }
         val state = getStateForPackage(packageName)
         dlog(TAG, "setThermalProfile: $packageName -> $state")
-        writeLine(THERMAL_SCONFIG, state.config)
+        return writeLine(THERMAL_SCONFIG, state.config)
     }
 
     private fun getDefaultStateForPackage(packageName: String): ThermalState {
