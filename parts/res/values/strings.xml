@@ -30,7 +30,8 @@
     <string name="thermal_no_apps">No apps found</string>
     <string name="thermal_no_search_results">No apps match \"%1$s\"</string>
     <string name="thermal_loading">Loading...</string>
-    <string name="thermal_default">Default</string>
+    <string name="thermal_automatic">Automatic</string>
+    <string name="thermal_default">Standard</string>
     <string name="thermal_benchmark">Benchmark</string>
     <string name="thermal_browser">Browser</string>
     <string name="thermal_camera">Camera</string>
@@ -40,5 +41,5 @@
     <string name="thermal_streaming">Streaming</string>
     <string name="thermal_video">Video</string>
     <string name="thermal_reset">Reset to defaults</string>
-    <string name="thermal_reset_message">Are you sure you want to reset thermal profile for all apps?</string>
+    <string name="thermal_reset_message">Restore automatic thermal profiles for all apps?</string>
 </resources>
