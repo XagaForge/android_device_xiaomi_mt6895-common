@@ -34,6 +34,12 @@ class ThermalService : Service() {
             override fun onTaskStackChanged() {
                 mainHandler.post { updateThermalProfile() }
             }
+
+            override fun onTaskFocusChanged(taskId: Int, focused: Boolean) {
+                if (focused) {
+                    mainHandler.post { updateThermalProfile() }
+                }
+            }
         }
 
     private val intentReceiver =
@@ -87,7 +93,7 @@ class ThermalService : Service() {
 
         val packageName = if (getSystemService(PowerManager::class.java).isInteractive) {
             runCatching {
-                ActivityTaskManager.getService().focusedRootTaskInfo?.topActivity?.packageName
+                ActivityTaskManager.getInstance().getTasks(1).firstOrNull()?.topActivity?.packageName
             }.onFailure {
                 Log.e(TAG, "Could not get foreground app", it)
             }.getOrElse { return }.orEmpty()
