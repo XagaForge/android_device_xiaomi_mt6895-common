@@ -20,7 +20,6 @@ allow hal_mfidoca_default tee_device:chr_file rw_file_perms;
 allow hal_mfidoca_default ion_device:chr_file r_file_perms;
 allow hal_mfidoca_default teei_client_device:chr_file rw_file_perms;
 
-get_prop(hal_mfidoca_default, vendor_mlipay_prop);
 set_prop(hal_mfidoca_default, vendor_mlipay_prop);
 
 get_prop(hal_mfidoca_default, vendor_fingerprint_prop);
