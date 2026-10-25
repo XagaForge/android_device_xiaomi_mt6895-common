@@ -3,7 +3,6 @@ type vendor_hal_fingerprint_hwservice_xiaomi, hwservice_manager_type;
 
 add_hwservice(hal_fingerprint_default, vendor_hal_fingerprint_hwservice_xiaomi)
 
-get_prop(hal_fingerprint_default, vendor_fingerprint_prop)
 set_prop(hal_fingerprint_default, vendor_fingerprint_prop)
 
 allow hal_fingerprint_default vendor_touchfeature_device:chr_file rw_file_perms;
