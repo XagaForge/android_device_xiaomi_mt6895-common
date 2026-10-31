@@ -43,7 +43,6 @@
 /vendor/lib(64)?/libanc_supervq\.so                                       u:object_r:same_process_hal_file:s0
 /vendor/lib(64)?/libapu_mdw_batch\.so                                     u:object_r:same_process_hal_file:s0
 /vendor/lib(64)?/libapu_mdw\.so                                           u:object_r:same_process_hal_file:s0
-/vendor/lib(64)?/libapusys\.so                                            u:object_r:same_process_hal_file:s0
 /vendor/lib(64)?/libArcNetMtk\.so                                         u:object_r:same_process_hal_file:s0
 /vendor/lib(64)?/libarcsoft_beautyshot\.so                                u:object_r:same_process_hal_file:s0
 /vendor/lib(64)?/libarcsoft_distortion_correction\.so                     u:object_r:same_process_hal_file:s0
